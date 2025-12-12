@@ -1,0 +1,14 @@
+id.exposure	id.outcome	outcome	exposure	egger_intercept	se	pval
+ANXA2	4PIn26	BileDuct.cancer	Proteins			
+C3	4PIn26	BileDuct.cancer	Proteins			
+CD14	4PIn26	BileDuct.cancer	Proteins			
+CFHR5	4PIn26	BileDuct.cancer	Proteins			
+COL6A3	4PIn26	BileDuct.cancer	Proteins			
+F2	4PIn26	BileDuct.cancer	Proteins			
+FAS	4PIn26	BileDuct.cancer	Proteins			
+FCN2	4PIn26	BileDuct.cancer	Proteins			
+GPC5	4PIn26	BileDuct.cancer	Proteins			
+GPNMB	4PIn26	BileDuct.cancer	Proteins			
+ICAM5	4PIn26	BileDuct.cancer	Proteins			
+KNG1	4PIn26	BileDuct.cancer	Proteins	-0.102619390838373	0.201943363121028	0.700690862086723
+VSIR	4PIn26	BileDuct.cancer	Proteins			

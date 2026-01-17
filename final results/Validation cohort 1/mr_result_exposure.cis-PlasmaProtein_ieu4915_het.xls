@@ -1,0 +1,12 @@
+id.exposure	id.outcome	outcome	exposure	method	Q	Q_df	Q_pval
+ANXA2	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	1.19849452183236	1	0.27362278260422
+C3	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	2.23207171038277	1	0.135172495586822
+C5	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	1.90340305264592	1	0.167697903304129
+CD14	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.00460546697288135	1	0.945894222141816
+COL6A3	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.0626807445427211	1	0.802308010464409
+FAS	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.150583710341379	1	0.697978166786339
+GPC5	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.00326065694959619	1	0.954463813897969
+GPNMB	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.411210704538521	1	0.521355638378976
+ICAM5	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.0431715024600368	1	0.835402677271092
+KNG1	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.332433474368005	1	0.564229671461343
+VSIR	jCr0oE	ieu-b-4915	Proteins	Inverse variance weighted	0.0539538580443558	1	0.816320780002983

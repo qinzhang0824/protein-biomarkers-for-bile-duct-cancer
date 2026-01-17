@@ -3,6 +3,7 @@
 1. Raw input data
    
 (1)Instrumental variables of plasma proteins used in MR analysis
+
 The reference for the instrumental variables of plasma proteins are DOI: 10.1186/s13073-023-01229-9
 The cis-pQTLs were selected based on the following criteria:
 (a). SNPs linked to any protein with a significance level of P < 5×10-8 were included;

@@ -18,7 +18,8 @@ Ultimately, the instrumental variables file used for analysis is "Raw_input_data
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 
-<img width="1936" height="221" alt="image" src="https://github.com/user-attachments/assets/640a03c3-b481-44fe-be62-4791a0e022f3" />
+<img width="2208" height="295" alt="image" src="https://github.com/user-attachments/assets/a80b892b-00ba-44d7-b142-86b8c1a9234e" />
+
 
 Notes:
 

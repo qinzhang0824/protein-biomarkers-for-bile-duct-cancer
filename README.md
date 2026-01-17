@@ -22,11 +22,11 @@ Three GWAS summary data of BTC patients and controls of European ancestry from t
 
 Notes:
 
-The raw C3_BILIARY_GALLBLADDER_EXALLC data link: https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC.gz
+(a). The raw C3_BILIARY_GALLBLADDER_EXALLC data link: https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC.gz
 
-The raw ieu-b-4915 VCF data link: https://opengwas.io/datasets/ieu-b-4915#
+(b). The raw ieu-b-4915 VCF data link: https://opengwas.io/datasets/ieu-b-4915#
 
-The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
+(c). The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
 
 

@@ -58,6 +58,12 @@ The three obtained datasets are as follows：
 
 "mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(ieu-b-4915)
 
+### final results/Validation cohort 2
+
+"mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Validation cohort 1(GCST90043859)
+
+"mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(GCST90043859)
+
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.
 2. The "Analysis_data" folder contains some intermediate files or result files generated during the MR analysis process.
 3. For SMR and HEIDI analysis, refer to https://yanglab.westlake.edu.cn/software/smr/#SMR&HEIDIanalysis.

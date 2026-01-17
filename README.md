@@ -2,7 +2,7 @@
 
 # Data Folder
 
-**1. Raw input data**
+## 1. Raw input data
 --------------------------------------------------------------------------------------------------
 (1) Instrumental variables of plasma proteins used in MR analysis
 

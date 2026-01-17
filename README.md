@@ -20,6 +20,11 @@ Ultimately, the instrumental variables file used for analysis is "Instrumental v
 (2)Three GWAS summary data of BTC patients
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
+GWAS ID	Cohort	Trait	Consortium	Sample size	ncase	ncontrol	Population	Number of SNPs
+C3_BILIARY_GALLBLADDER_EXALLC	Discovery cohort	Bile duct cancer	FinnGen R12	381047	2298	378749	European	21304529
+ieu-b-4915	Validation cohort 1	Liver & bile duct cancer	Burrows	372366	350	372016	 European	7687713
+GCST90043859	Validation cohort 2	Intrahepatic bile duct carcinoma	Jiang L	456348	104	456244	European	11842647
+<img width="1936" height="221" alt="image" src="https://github.com/user-attachments/assets/640a03c3-b481-44fe-be62-4791a0e022f3" />
 
 
 

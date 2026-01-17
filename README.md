@@ -64,4 +64,4 @@ The three obtained datasets are as follows：
 
 "mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(GCST90043859)
 
-#Prerequisites
+# Prerequisites

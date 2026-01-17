@@ -29,6 +29,7 @@ Notes:
 
 (c). The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
+2. intermediate files
 
 
 

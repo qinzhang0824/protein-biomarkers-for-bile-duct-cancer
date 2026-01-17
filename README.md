@@ -31,7 +31,15 @@ Notes:
 
 2. intermediate files
 
+After obtaining the GWAS data and plasma protein instrumental variables, we extracted the SNP information of the exposure and outcome, harmonized the data, and ultimately ensured that the effect alleles of SNPs in the exposure and outcome data were consistent. 
 
+The three obtained datasets are as follows：
+
+(a). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls": C3_BILIARY_GALLBLADDER_EXALLC harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
+
+(c). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls": ieu-b-4915 harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
+
+(c). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls": GCST90043859 harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
 
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.
 2. The "Analysis_data" folder contains some intermediate files or result files generated during the MR analysis process.

@@ -1,5 +1,5 @@
 # protein-biomarkers-for-bile-duct-cancer
-1. Raw input data
+**1. Raw input data**
    
 (1) Instrumental variables of plasma proteins used in MR analysis
 
@@ -29,7 +29,7 @@ Notes:
 
 (c). The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
-2. intermediate files
+**2. intermediate files**
 
 After obtaining the GWAS data and plasma protein instrumental variables, we extracted the SNP information of the exposure and outcome, harmonized the data, and ultimately ensured that the effect alleles of SNPs in the exposure and outcome data were consistent. 
 
@@ -41,7 +41,7 @@ The three obtained datasets are as follows：
 
 (c). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls": GCST90043859 harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
 
-3.final results
+**3.final results**
 
 
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.

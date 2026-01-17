@@ -4,6 +4,7 @@
 (1) Instrumental variables of plasma proteins used in MR analysis
 
 The reference for the instrumental variables of plasma proteins are DOI: 10.1186/s13073-023-01229-9
+The raw instrumental variables of plasma proteins is "Raw_input_data/Plasma.Protein_Instruments.Raw.xls"
 
 The cis-pQTLs were selected based on the following criteria:
 (a). SNPs linked to any protein with a significance level of P < 5×10-8 were included;
@@ -11,7 +12,7 @@ The cis-pQTLs were selected based on the following criteria:
 (c). subsequently, LD clumping was performed to identify independent protein quantitative trait loci (pQTLs) for each protein, ensuring that variants had an r² value less than 0.001;
 (d). F-statistics genetic instruments were higher than 10
 
-Ultimately, the instrumental variables file used for analysis is "Instrumental variables of plasma proteins used in MR analysis.xls"
+Ultimately, the instrumental variables file used for analysis is "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
 
 (2) Three GWAS summary data of Bile tract cancer (BTC) patients
 
@@ -26,6 +27,9 @@ The raw C3_BILIARY_GALLBLADDER_EXALLC data link: https://storage.googleapis.com/
 The raw ieu-b-4915 VCF data link: https://opengwas.io/datasets/ieu-b-4915#
 
 The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
+
+
+
 
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.
 2. The "Analysis_data" folder contains some intermediate files or result files generated during the MR analysis process.

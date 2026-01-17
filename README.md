@@ -1,6 +1,7 @@
 # protein-biomarkers-for-bile-duct-cancer
 
 1. Raw input data
+   
 (1)Instrumental variables of plasma proteins used in MR analysis
 
 The cis-pQTLs were selected based on the following criteria:

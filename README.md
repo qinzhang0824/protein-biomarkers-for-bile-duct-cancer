@@ -46,11 +46,17 @@ The three obtained datasets are as follows：
 
 ## 3.final results
 
-(a) final results/Discovery cohort
+### final results/Discovery cohort
 
 "mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC)
 
 "mr_result_exposure.cis-PlasmaProtein_outcome.finn12_steiger_direction.xls" : The results of the Steiger test for the Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC)
+
+### final results/Validation cohort 1
+
+"mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Validation cohort 1(ieu-b-4915)
+
+"mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(ieu-b-4915)
 
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.
 2. The "Analysis_data" folder contains some intermediate files or result files generated during the MR analysis process.

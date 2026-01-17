@@ -1,0 +1,13 @@
+id.exposure	id.outcome	outcome	exposure	egger_intercept	se	pval
+ANXA2	fa4z0e	Bile.duct.cancer	Proteins			
+C3	fa4z0e	Bile.duct.cancer	Proteins			
+CD14	fa4z0e	Bile.duct.cancer	Proteins			
+CFHR5	fa4z0e	Bile.duct.cancer	Proteins			
+COL6A3	fa4z0e	Bile.duct.cancer	Proteins			
+FAS	fa4z0e	Bile.duct.cancer	Proteins			
+FCN2	fa4z0e	Bile.duct.cancer	Proteins			
+GPC5	fa4z0e	Bile.duct.cancer	Proteins			
+GPNMB	fa4z0e	Bile.duct.cancer	Proteins			
+ICAM5	fa4z0e	Bile.duct.cancer	Proteins			
+KNG1	fa4z0e	Bile.duct.cancer	Proteins	-0.0438122830106181	0.0508255748074028	0.547091659786928
+VSIR	fa4z0e	Bile.duct.cancer	Proteins			

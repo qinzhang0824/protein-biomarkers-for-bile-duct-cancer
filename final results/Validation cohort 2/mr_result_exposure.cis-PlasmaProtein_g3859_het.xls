@@ -1,0 +1,15 @@
+id.exposure	id.outcome	outcome	exposure	method	Q	Q_df	Q_pval
+ANXA2	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	1.78739610167694	1	0.181243744153653
+C3	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	1.89177835630998	1	0.169001477003562
+CD14	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.0266903756388116	1	0.870225631159548
+CFHR5	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.953673293641632	1	0.328786051195275
+COL6A3	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	1.18637099074445	1	0.276062794521392
+F2	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.12928969499473	1	0.719169647107026
+FAS	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.0435347255324606	1	0.834721656565387
+FCN2	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.184504851385499	1	0.667530087708437
+GPC5	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.118793970409905	1	0.730346224592432
+GPNMB	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	1.56325602208487	1	0.211189112172708
+ICAM5	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.00772699697311025	1	0.929953502896584
+KNG1	4PIn26	BileDuct.cancer	Proteins	MR Egger	0.00212313915463447	1	0.963248452125653
+KNG1	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.260348977071319	2	0.87794222670123
+VSIR	4PIn26	BileDuct.cancer	Proteins	Inverse variance weighted	0.00844062861625576	1	0.926799027967097

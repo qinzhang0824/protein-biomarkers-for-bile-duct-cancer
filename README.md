@@ -10,7 +10,9 @@ The cis-pQTLs were selected based on the following criteria:
 (a). SNPs linked to any protein with a significance level of P < 5×10-8 were included;
 (b). SNPs and proteins located within the Major Histocompatibility Complex (MHC) region on chromosome 6 (25.5–34.0 Mb) were excluded because of the intricate linkage disequilibrium (LD) patterns in this area;
 (c). subsequently, LD clumping was performed to identify independent protein quantitative trait loci (pQTLs) for each protein, ensuring that variants had an r² value less than 0.001;
+(d). F-statistics genetic instruments were higher than 10
 
+Ultimately, the instrumental variables file used for analysis is "Instrumental variables of plasma proteins used in MR analysis.xls"
 
 (2)Three GWAS summary data of BTC patients
 

@@ -19,8 +19,12 @@ Ultimately, the instrumental variables file used for analysis is "Instrumental v
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 <img width="1936" height="221" alt="image" src="https://github.com/user-attachments/assets/640a03c3-b481-44fe-be62-4791a0e022f3" />
 
+Notes:
+
 The raw C3_BILIARY_GALLBLADDER_EXALLC data link: https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC.gz
+
 The raw ieu-b-4915 VCF data link: https://opengwas.io/datasets/ieu-b-4915#
+
 The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
 1. The "Data" folder contains the original or preliminary input data used in the MR analysis process.

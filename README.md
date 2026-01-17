@@ -16,6 +16,7 @@ Ultimately, the instrumental variables file used for analysis is "Instrumental v
 (2) Three GWAS summary data of Bile tract cancer (BTC) patients
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
+
 <img width="1936" height="221" alt="image" src="https://github.com/user-attachments/assets/640a03c3-b481-44fe-be62-4791a0e022f3" />
 
 Notes:

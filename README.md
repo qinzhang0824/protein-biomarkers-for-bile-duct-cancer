@@ -1,8 +1,7 @@
 # protein-biomarkers-for-bile-duct-cancer
-
 1. Raw input data
    
-(1)Instrumental variables of plasma proteins used in MR analysis
+(1) Instrumental variables of plasma proteins used in MR analysis
 
 The reference for the instrumental variables of plasma proteins are DOI: 10.1186/s13073-023-01229-9
 
@@ -14,7 +13,7 @@ The cis-pQTLs were selected based on the following criteria:
 
 Ultimately, the instrumental variables file used for analysis is "Instrumental variables of plasma proteins used in MR analysis.xls"
 
-(2)Three GWAS summary data of Bile tract cancer (BTC) patients
+(2) Three GWAS summary data of Bile tract cancer (BTC) patients
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 <img width="1936" height="221" alt="image" src="https://github.com/user-attachments/assets/640a03c3-b481-44fe-be62-4791a0e022f3" />

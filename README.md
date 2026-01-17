@@ -5,7 +5,7 @@
 --------------------------------------------------------------------------------------------------
 (1) Instrumental variables of plasma proteins used in MR analysis
 
-[The reference for the instrumental variables of plasma proteins are] (DOI: 10.1186/s13073-023-01229-9)
+The reference for the instrumental variables of plasma proteins are (DOI: 10.1186/s13073-023-01229-9)
 The raw instrumental variables of plasma proteins is "Raw_input_data/Plasma.Protein_Instruments.Raw.xls"
 
 The cis-pQTLs were selected based on the following criteria:
@@ -25,7 +25,7 @@ Three GWAS summary data of BTC patients and controls of European ancestry from t
 
 Notes:
 
-(a). The raw C3_BILIARY_GALLBLADDER_EXALLC data link: https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC.gz
+(a). [The raw C3_BILIARY_GALLBLADDER_EXALLC data link](https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC.gz)
 
 (b). The raw ieu-b-4915 VCF data link: https://opengwas.io/datasets/ieu-b-4915#
 

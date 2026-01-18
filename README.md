@@ -75,9 +75,8 @@ Users running Platform: x86_64-pc-linux-gnu and Running under: Ubuntu 20.04.6 LT
 install.packages("remotes")
 remotes::install_github("MRCIEU/TwoSampleMR")
 
-** other attached packages and versions **
+**other attached packages and versions**
 
-| | | | |
 |---|---|---|---|
 | TwoSampleMR_0.5.8 | plyr_1.8.9 | gassocplot_0.0.2 | ggplot2_4.0.0 |
 | readr_2.1.6 | MRPRESSO_1.0 | MendelianRandomization_0.10.0 | ggsci_4.0.0 |

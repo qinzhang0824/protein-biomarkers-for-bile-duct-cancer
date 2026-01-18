@@ -97,6 +97,8 @@ The summary data-based Mendelian randomization (SMR) and HEIDI analyses were con
 
 **smr software was upload to SMA_analysis folder**
 
+The SMR software path: SMR_analysis/smr-1.3.1-linux-x86_64.zip
+
 GTEx_V8 data link: https://yanglab.westlake.edu.cn/data/SMR/GTEx_V8_cis_eqtl_summary_lite.tar
 
 eQTL data link: https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz

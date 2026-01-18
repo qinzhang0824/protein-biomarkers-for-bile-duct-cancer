@@ -42,7 +42,7 @@ protein.mr <- format_data(protein,type = "exposure",
 p.sig <- 0.05/1178
 
 ##########################################################################Read FinnGen R12 download data and harmonise with Instruments variables of plasma proteins
-finngen <-fread('finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC',header = T,sep='\t')
+finngen <-fread('Raw_input_data/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC',header = T,sep='\t')
 finngen <-as.data.frame(finngen)
 finngen$phenotype <- "Bile.duct.cancer"
 finngen$samplesize <- as.numeric(381047)
@@ -64,7 +64,7 @@ mydata <- harmonise_data(exposure_dat=protein.mr,outcome_dat=bile.finn,action= 2
 export(mydata,"intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls",format = "\t")
 
 ###################################################################### Read IEU-b-4915 download data (vcf) and harmonise with Instruments variables of plasma proteins
-vcf <- VariantAnnotation::readVcf("ieu-b-4915.vcf", "hg19")
+vcf <- VariantAnnotation::readVcf("Raw_input_data/ieu-b-4915.vcf", "hg19")
 outcome_dat <- gwasvcf_to_TwoSampleMR(vcf,type = "outcome")
 
 ieu4915<-outcome_dat
@@ -72,7 +72,7 @@ mydata <- harmonise_data(exposure_dat=protein.mr,outcome_dat=ieu4915,action= 2)
 
 export(mydata,"intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls",format = "\t")
 ########################################################################################### Read GCST90043859 download data and harmonise with Instruments variables of plasma proteins
-g3859 <-fread('GCST90043859_buildGRCh37.tsv',header = T,sep='\t')
+g3859 <-fread('Raw_input_data/GCST90043859_buildGRCh37.tsv',header = T,sep='\t')
 g3859 <-as.data.frame(g3859)
 g3859$phenotype <- "BileDuct.cancer"
 #g3859$samplesize <- as.numeric(456285)
@@ -91,4 +91,4 @@ g3859MR <- format_data(g3859,type = "outcome",
                        pos_col = "base_pair_location")
 
 mydata <- harmonise_data(exposure_dat=protein.mr,outcome_dat=g3859MR,action= 2)
-export(mydata,"Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls",format = "\t")
+export(mydata,"intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls",format = "\t")

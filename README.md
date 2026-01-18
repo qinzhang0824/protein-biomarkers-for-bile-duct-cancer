@@ -201,9 +201,19 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 
 <img width="1026" height="727" alt="image" src="https://github.com/user-attachments/assets/94b4dbdc-ccdb-45db-8cbf-fda88974be59" />
 
+## Step 7: SMR and HEIDI tests
 
+eQTLGen consortium analysis:
 
+```r
+SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile /home/data/t020412/R/x86_64-pc-linux-gnu-library/4.3/plinkbinr/EUR --gwas-summary /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/SMR_GWAS_FinngenR12_input_NoD.txt --beqtl-summary /home/data/t020412/Qinzhang_data/MR_analysis/eQTLGen/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/FinngenR12.cis.eQTL
+```
 
+eQTL.GTEX.v8 analysis:
+
+```r
+SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile /home/data/t020412/R/x86_64-pc-linux-gnu-library/4.3/plinkbinr/EUR --gwas-summary /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/SMR_GWAS_FinngenR12_input_NoD.txt --beqtl-summary /home/data/t020412/Qinzhang_data/MR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/FinngenR12.cis.eQTL.GTEX.v8
+```
 
 
 

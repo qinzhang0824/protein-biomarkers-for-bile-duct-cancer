@@ -147,7 +147,11 @@ Rscript 1.data_process.R
 
 ## Step 2: MR analysis
 
+MR analysis as follows:
 
+```r
+Rscript 2.MR_analysis.R
+```
 
 
 

@@ -153,7 +153,15 @@ MR analysis as follows:
 Rscript 2.MR_analysis.R
 ```
 
+## Step 3: Figure2 plot
 
+MR analysis as follows:
+
+```r
+Rscript 3. volcano_plot.R
+```
+
+## Step 4: Figure3 plot
 
 
 

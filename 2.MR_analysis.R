@@ -22,20 +22,14 @@ library(ggsci)
 library("ggpubr")
 library(forestplot)
 
-.libPaths(c('~/R/x86_64-pc-linux-gnu-library/4.3',
-            '/refdir/Rlib_4.3',
-            '/usr/local/lib/R/library'))
-
-
-mydata <- fread('Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls',header = T)
+##################### MR analysis finngen.R12
+mydata <- fread('intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls',header = T)
 
 result <- mr(mydata, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
-export(result,"mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls",format = "\t") 
-
 MR.OR<-generate_odds_ratios(result)
-export(MR.OR,"mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",format = "\t") 
 
-MR.OR<-fread('mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls',header = T)
+export(MR.OR,"final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",format = "\t") 
+
 
 het <- mr_heterogeneity(mydata)
 export(het,"mr_result_exposure.cis-PlasmaProtein_outcome.finn12_het.xls",format = "\t")

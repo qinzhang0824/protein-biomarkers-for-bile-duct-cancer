@@ -4,13 +4,13 @@ library(ggsci)
 library("ggpubr")
 library(forestplot)
 
-mr.or <-fread("mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
-mr.or <-fread('mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
-mr.or <-fread('mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
+mr.or <-fread("final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
+mr.or1 <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
+mr.or2 <-fread('final results/Validation cohort 2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
 
 out_multi.finn <-mr.or[mr.or$pval<(0.05/1178),]
-out_multi.4915 <-mr.or[mr.or$id.exposure %in% c("NCAN","SERPINA1"),]
-out_multi.g3859 <-mr.or[mr.or$id.exposure %in% c("NCAN","SERPINA1"),]
+out_multi.4915 <-mr.or1[mr.or1$id.exposure %in% c("NCAN","SERPINA1"),]
+out_multi.g3859 <-mr.or2[mr.or2$id.exposure %in% c("NCAN","SERPINA1"),]
 
 out_multi <-rbind(out_multi.finn,out_multi.4915,out_multi.g3859)
 
@@ -51,6 +51,6 @@ pforest <- forestplot(labeltext=tabletext,
                                      xlab=gpar(cex = 1.4),
                                      title=gpar(cex = 1.2))
 )
-pdf("./Plasma_Protein_vs_Discovery_and_validation_Forest.pdf", width=12, height=6)
+pdf("final results/Figure3_Plasma_Protein_vs_Discovery_and_validation_Forest.pdf", width=12, height=6)
 pforest
 dev.off()

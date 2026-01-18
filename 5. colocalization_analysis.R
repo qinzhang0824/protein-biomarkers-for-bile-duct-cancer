@@ -56,7 +56,7 @@ gwas_fn <- gwas[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = p
 pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
 
 locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs2228603")
-ggsave('final results/Figure4_NCAN_finngen_Coloc.pdf',width=9,height = 4.5)
+ggsave('final results/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
 
 ################################################################################################################################## SERPINA1
 
@@ -108,4 +108,4 @@ pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = 
 
 locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs28929474")
 
-ggsave('final results/Figure4_SERPINA1_finngen_Coloc.pdf',width=9,height = 4.5)
+ggsave('final results/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)

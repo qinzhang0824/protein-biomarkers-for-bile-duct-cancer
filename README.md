@@ -119,7 +119,25 @@ eQTL data link: https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_for
 
 ## Step 1: Data preparation
 
+summary-level GWAS and cis-pQTL data that consist of at least 11 required columns for GWAS and 11 required columns for cis-pQTL. Other columns will be ignored during processing.
 
+Notice: the names of required columns MUST be consistent with the following headers, while the order can be inconsistent. The required data format is presented as follows:
+
+GWAS summary stats:
+
+| chr.outcome | pos.outcome | other_allele.outcome | effect_allele.outcome | SNP | pval.outcome | beta.outcome | se.outcome | eaf.outcome | samplesize.outcome | outcome |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 13668 | G | A | rs2691328 | 0.314029 | -0.365242 | 0.362774 | 0.00541903 | 381047 | Bile.duct.cancer |
+| 1 | 14506 | G | A | rs1240557819 | 0.0440494 | 0.765322 | 0.380072 | 0.00589771 | 381047 | Bile.duct.cancer |
+| 1 | 14521 | C | T | rs1378626194 | 0.159142 | 1.09296 | 0.77627 | 0.00143347 | 381047 | Bile.duct.cancer |
+
+cis-pQTL summary stats:
+
+| Protein | N | SNP | Chr | Pos | Effect allele | Other allele | Eaf | Beta | Se | P |
+| :--- | ---: | :--- | :--- | :--- | :--- | :--- | ---: | ---: | ---: | ---: |
+| A1BG | 10,708 | rs893184 | 19 | 58864479 | T | C | 0.05 | -1.07 | 0.03 | 1.00E-200 |
+| A2M | 10,708 | rs226384 | 12 | 9263647 | T | C | 0.35 | -0.14 | 0.01 | 7.14E-27 |
+| A2ML1 | 10,708 | rs1558526 | 12 | 9009820 | A | G | 0.26 | -0.3 | 0.02 | 9.50E-90 |
 
 
 

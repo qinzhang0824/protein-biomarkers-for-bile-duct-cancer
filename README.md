@@ -1,4 +1,3 @@
-[![DOI](https://zenodo.org/badge/1113719914.svg)](https://doi.org/10.5281/zenodo.18227976)
 
 # protein-biomarkers-for-bile-duct-cancer
 

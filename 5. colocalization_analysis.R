@@ -8,12 +8,15 @@ library(MRPRESSO)
 library("locuscomparer")
 library(coloc)
 
-out <- fread ("finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)
-
+#####################################################################################NCAN
 #t.chr <-'chr19'
 t.chr <-'19'
 t.pos <-19329924
-#####################################################################################NCAN
+
+out <- fread ("finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)
+gwas <- out[out$chr.outcome=="19",]
+gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
+
 protein <- fread("Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
 protein$phenotype <- "Proteins"
 protein <- as.data.frame(protein)
@@ -31,9 +34,9 @@ data <- format_data(protein,type = "exposure",
                     samplesize_col = "N",
                     id_col = "Proteins",
                     pos_col = "Pos")
-pQTL <-data[data$chr.exposure==t.chr,]
+pQTL <-data[data$chr.exposure=="chr19",]
 pQTL <- pQTL[pQTL$pos.exposure >t.pos-1000000 & pQTL$pos.exposure < t.pos+1000000,]
-gwas <- out[out$chr.outcome==t.chr,]
+gwas <- out[out$chr.outcome=="19",]
 gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
 
 ########## finngen case 2298
@@ -48,9 +51,6 @@ sameSNP <- intersect(pQTL$SNP,gwas$SNP)
 
 pQTL <- pQTL[pQTL$SNP %in% sameSNP,]
 gwas <- gwas[gwas$SNP %in% sameSNP,]
-
-##### finngen
-gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
 
 result <- coloc.abf(dataset1=list(pvalues=gwas$pval.outcome, snp=gwas$SNP,MAF=gwas$MAF,beta=gwas$beta.outcome, varbeta=gwas$se.outcome^2,type="cc", s=gwas$s[1], N=gwas$samplesize.outcome),dataset2=list(pvalues=pQTL$pval.exposure, snp=pQTL$SNP,MAF=pQTL$MAF,beta=pQTL$beta.exposure, varbeta=pQTL$se.exposure, type="quant", N=pQTL$samplesize.exposure), MAF=pQTL$MAF)
 

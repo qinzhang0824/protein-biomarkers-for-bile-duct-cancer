@@ -163,9 +163,13 @@ Rscript 3. volcano_plot.R
 
 ## Step 4: Figure3 plot
 
+Figure3 forest plot as follows:
 
+```r
+Rscript 4.Forest_plot.R
+```
 
-
+## Step 5: Figure4 plot
 
 
 

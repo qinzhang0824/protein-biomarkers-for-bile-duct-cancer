@@ -65,3 +65,45 @@ The three obtained datasets are as follows：
 "mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(GCST90043859)
 
 # Prerequisites
+
+## R dependencies
+
+### R version 4.4.3 
+
+Users running Platform: x86_64-pc-linux-gnu and Running under: Ubuntu 20.04.6 LTS, to install the latest version of TwoSampleMR_0.5.8
+
+install.packages("remotes")
+remotes::install_github("MRCIEU/TwoSampleMR")
+
+other attached packages:
+ [1] rio_1.2.4                     reticulate_1.44.1             BiocParallel_1.40.2           patchwork_1.3.2                     
+ [5] GenomicRanges_1.58.0          GenomeInfoDb_1.42.3           IRanges_2.40.1                MatrixGenerics_1.18.1                 
+ [9] matrixStats_1.5.0             Rcpp_1.1.0                    labeling_0.4.3                lubridate_1.9.4     
+[13] forcats_1.0.1                 stringr_1.5.2                 purrr_1.1.0                   tidyr_1.3.1                 
+[17] tibble_3.3.0                  tidyverse_2.0.0               cowplot_1.2.0                 ggraph_2.2.2   
+[21] irlba_2.3.5.1                  VGAM_1.1-14                  Biobase_2.66.0                Matrix_1.6-5  
+[25] sp_2.2-0                      forestplot_3.1.7              abind_1.4-8                   ggpubr_0.6.2  
+[29] ggsci_4.0.0                   ggplot2_4.0.0                 TwoSampleMR_0.5.8             readr_2.1.6    
+[33] S4Vectors_0.44.0              BiocGenerics_0.52.0           plinkbinr_0.0.0.9000          MendelianRandomization_0.10.0                  
+[37] gassocplot_0.0.2              gwasglue_0.0.0.9000           ieugwasr_1.0.1                gwasvcf_0.1.2                                
+[41] coloc_5.2.3                   locuscomparer_1.0.0           MRPRESSO_1.0                  plyr_1.8.9                      
+[45] readxl_1.4.5                  data.table_1.17.8             dplyr_1.1.4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

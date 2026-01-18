@@ -139,7 +139,11 @@ cis-pQTL summary stats:
 | A2M | 10,708 | rs226384 | 12 | 9263647 | T | C | 0.35 | -0.14 | 0.01 | 7.14E-27 |
 | A2ML1 | 10,708 | rs1558526 | 12 | 9009820 | A | G | 0.26 | -0.3 | 0.02 | 9.50E-90 |
 
+Data preparation as follows:
 
+```r
+Rscript 1.data_process.R
+```
 
 
 

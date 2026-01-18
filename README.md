@@ -183,7 +183,15 @@ Figure4 forest plot as follows:
 Rscript 5. colocalization_analysis.R
 ```
 
+## Step 6: Figure5 plot
 
+Figure 5 is derived from the online analysis results of STRING, and the website address is as follows: 
+
+[STRING](https://cn.string-db.org/)
+
+NCAN STRING analysis result: https://cn.string-db.org/cgi/network?taskId=bzERFKo1o0Px&sessionId=b2H7LbHajq0R
+
+SERPINA1 STRING analysis result: https://cn.string-db.org/cgi/network?taskId=bBPX6TOgzExM&sessionId=bGBRvdvhhDib
 
 
 

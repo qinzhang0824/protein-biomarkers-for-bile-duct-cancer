@@ -189,11 +189,17 @@ Figure 5 is derived from the online analysis results of STRING, and the website 
 
 [STRING](https://cn.string-db.org/)
 
-NCAN STRING analysis result: https://cn.string-db.org/cgi/network?taskId=bzERFKo1o0Px&sessionId=b2H7LbHajq0R
+NCAN STRING analysis result: https://cn.string-db.org/cgi/network?taskId=bzERFKo1o0Px&sessionId=b2H7LbHajq0R                        
 
 SERPINA1 STRING analysis result: https://cn.string-db.org/cgi/network?taskId=bBPX6TOgzExM&sessionId=bGBRvdvhhDib
 
+Figure 5C NCAN enrichment analysis related parameters:
 
+<img width="1027" height="727" alt="image" src="https://github.com/user-attachments/assets/5464f620-b996-4eb3-878d-c055b1c205a0" />
+
+Figure 5D SERPINA1 enrichment analysis related parameters:
+
+<img width="1026" height="727" alt="image" src="https://github.com/user-attachments/assets/94b4dbdc-ccdb-45db-8cbf-fda88974be59" />
 
 
 

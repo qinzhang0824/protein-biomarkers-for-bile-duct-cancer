@@ -9,8 +9,13 @@ library("locuscomparer")
 library(coloc)
 
 out <- fread ("finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)
-out <- fread ("BileDuct.cancer_g3859MR.MRinput.txt",sep='\t',header = T)
-out <- fread ("ieu-b-4915_outcome.MR.format.xls",sep='\t',header = T)
+
+| chr.outcome | pos.outcome | other_allele.outcome | effect_allele.outcome | SNP | pval.outcome | beta.outcome | se.outcome | eaf.outcome | samplesize.outcome | outcome |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 13668 | G | A | rs2691328 | 0.314029 | -0.365242 | 0.362774 | 0.00541903 | 381047 | Bile.duct.cancer |
+| 1 | 14506 | G | A | rs1240557819 | 0.0440494 | 0.765322 | 0.380072 | 0.00589771 | 381047 | Bile.duct.cancer |
+| 1 | 14521 | C | T | rs1378626194 | 0.159142 | 1.09296 | 0.77627 | 0.00143347 | 381047 | Bile.duct.cancer |
+
 
 t.chr <-'chr19'
 t.pos <-19329924
@@ -39,12 +44,6 @@ gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,
 
 ########## finngen case 2298
 gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
-
-############g3859 case 104
-gwas$s <-as.numeric(104/gwas$samplesize.outcome)
-
-############ieu-b-4915 case 350
-gwas$s <-as.numeric(350/gwas$samplesize.outcome)
 
 
 #########SERPINA1

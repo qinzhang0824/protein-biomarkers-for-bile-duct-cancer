@@ -115,6 +115,8 @@ GTEx_V8 data link: https://yanglab.westlake.edu.cn/data/SMR/GTEx_V8_cis_eqtl_sum
 
 eQTL data link: https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz
 
+**Download the above three files to the "SMR_analysis" folder to prepare for the subsequent analysis.**
+
 
 # Getting Started
 
@@ -207,16 +209,14 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 eQTLGen consortium analysis:
 
 ```r
-SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile /home/data/t020412/R/x86_64-pc-linux-gnu-library/4.3/plinkbinr/EUR --gwas-summary /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/SMR_GWAS_FinngenR12_input_NoD.txt --beqtl-summary /home/data/t020412/Qinzhang_data/MR_analysis/eQTLGen/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/FinngenR12.cis.eQTL
+SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out ./final results/FinngenR12.cis.eQTL
 ```
 
 eQTL.GTEX.v8 analysis:
 
 ```r
-SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile /home/data/t020412/R/x86_64-pc-linux-gnu-library/4.3/plinkbinr/EUR --gwas-summary /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/SMR_GWAS_FinngenR12_input_NoD.txt --beqtl-summary /home/data/t020412/Qinzhang_data/MR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out /home/data/t020412/Qinzhang_data/MR_drug.target_BileDuctCancer/FinngenR12.cis.eQTL.GTEX.v8
+SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out ./final results/FinngenR12.cis.eQTL.GTEX.v8
 ```
-
-
 
 
 

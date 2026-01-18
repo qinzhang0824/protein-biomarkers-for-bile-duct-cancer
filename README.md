@@ -36,6 +36,8 @@ Notes:
 
 (c). The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
+Download the above three files to the "Raw input data" folder to prepare for the subsequent analysis.
+
 ## 2. intermediate files
 
 After obtaining the GWAS data and plasma protein instrumental variables, we extracted the SNP information of the exposure and outcome, harmonized the data, and ultimately ensured that the effect alleles of SNPs in the exposure and outcome data were consistent. 

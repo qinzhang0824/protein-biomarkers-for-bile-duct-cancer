@@ -39,7 +39,6 @@ protein.mr <- format_data(protein,type = "exposure",
                           samplesize_col = "N",
                           id_col = "Protein",
                           pos_col = "Pos")
-p.sig <- 0.05/1178
 
 ##########################################################################Read FinnGen R12 download data and harmonise with Instruments variables of plasma proteins
 finngen <-fread('Raw_input_data/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC',header = T,sep='\t')

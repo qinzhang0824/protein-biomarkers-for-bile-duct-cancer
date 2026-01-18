@@ -76,8 +76,10 @@ The three obtained datasets are as follows：
 
 Users running Platform: x86_64-pc-linux-gnu and Running under: Ubuntu 20.04.6 LTS, to install the latest version of TwoSampleMR_0.5.8
 
+```r
 install.packages("remotes")
 remotes::install_github("MRCIEU/TwoSampleMR")
+```
 
 **other attached packages and versions**
 
@@ -89,7 +91,9 @@ remotes::install_github("MRCIEU/TwoSampleMR")
 | data.table_1.17.8 | coloc_5.2.3 | S4Vectors_0.44.0 | forestplot_3.1.7 |
 | readxl_1.4.5 | gwasglue_0.0.0.9000 | rio_1.2.4 | ggthemes_5.2.0 |
 
+## Summary‑data‑based MR (SMR) and HEIDI test
 
+The summary data-based Mendelian randomization (SMR) and HEIDI analyses were conducted using SMR software version 1.3.1. For the SMR test
 
 
 

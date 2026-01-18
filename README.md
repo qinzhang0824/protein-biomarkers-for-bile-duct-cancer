@@ -145,6 +145,34 @@ Data preparation as follows:
 Rscript 1.data_process.R
 ```
 
+## Step 2: MR analysis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

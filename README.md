@@ -180,7 +180,7 @@ SERPINA1 and NCAN plasma proteins data link:
 
 [Ferkingstad.15573_110_NCAN_CSPG3.txt](https://omicscience.org/data_usage_agreement.php)
 
-Figure4 forest plot as follows:
+Figure4 colocalization plot as follows:
 
 ```r
 Rscript 5. colocalization_analysis.R

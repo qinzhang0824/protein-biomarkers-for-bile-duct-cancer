@@ -115,6 +115,12 @@ GTEx_V8 data link: https://yanglab.westlake.edu.cn/data/SMR/GTEx_V8_cis_eqtl_sum
 eQTL data link: https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz
 
 
+# Getting Started
+
+## Step 1: Data preparation
+
+
+
 
 
 

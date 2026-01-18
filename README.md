@@ -79,13 +79,15 @@ other attached packages and versions:
 
 | TwoSampleMR_0.5.8 |	plyr_1.8.9	| gassocplot_0.0.2	| ggplot2_4.0.0 |
 
-readr_2.1.6	MRPRESSO_1.0	MendelianRandomization_0.10.0	ggsci_4.0.0 
-dplyr_1.1.4	locuscomparer_1.0.0	ieugwasr_1.0.1 	ggpubr_0.6.2
-data.table_1.17.8	coloc_5.2.3	S4Vectors_0.44.0	forestplot_3.1.7 
-readxl_1.4.5	gwasglue_0.0.0.9000	rio_1.2.4	ggthemes_5.2.0
 <img width="1120" height="141" alt="image" src="https://github.com/user-attachments/assets/9580005a-a96c-4165-ab02-b447af37c1bd" />
 
-
+| | | | |
+|---|---|---|---|
+| TwoSampleMR_0.5.8 | plyr_1.8.9 | gassocplot_0.0.2 | ggplot2_4.0.0 |
+| readr_2.1.6 | MRPRESSO_1.0 | MendelianRandomization_0.10.0 | ggsci_4.0.0 |
+| dplyr_1.1.4 | locuscomparer_1.0.0 | ieugwasr_1.0.1 | ggpubr_0.6.2 |
+| data.table_1.17.8 | coloc_5.2.3 | S4Vectors_0.44.0 | forestplot_3.1.7 |
+| readxl_1.4.5 | gwasglue_0.0.0.9000 | rio_1.2.4 | ggthemes_5.2.0 |
 
 
 

@@ -21,6 +21,12 @@ Ultimately, the instrumental variables file used for analysis is "Raw_input_data
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 
+| GWAS ID | Cohort | Trait | Consortium | Sample size | ncase | ncontrol | Population | Number of SNPs |
+| :--- | :--- | :--- | :--- | ---: | ---: | ---: | :--- | ---: |
+| C3_BILIARY_GALLBLADDER_EXALLC | Discovery cohort | Malignant neoplasm of intrahepatic ducts, biliary tract and gallbladder | FinnGen R12 | 381,047 | 2,298 | 378,749 | European | 21,304,529 |
+| ieu-b-4915 | Validation cohort 1 | Liver & bile duct cancer | Burrows | 372,366 | 350 | 372,016 | European | 7,687,713 |
+| GCST90043859 | Validation cohort 2 | Intrahepatic bile duct carcinoma | Jiang L | 456,348 | 104 | 456,244 | European | 11,842,647 |
+
 <img width="2208" height="295" alt="image" src="https://github.com/user-attachments/assets/a80b892b-00ba-44d7-b142-86b8c1a9234e" />
 
 
@@ -77,6 +83,7 @@ remotes::install_github("MRCIEU/TwoSampleMR")
 
 **other attached packages and versions**
 
+| | | | |
 |---|---|---|---|
 | TwoSampleMR_0.5.8 | plyr_1.8.9 | gassocplot_0.0.2 | ggplot2_4.0.0 |
 | readr_2.1.6 | MRPRESSO_1.0 | MendelianRandomization_0.10.0 | ggsci_4.0.0 |

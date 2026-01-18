@@ -103,8 +103,9 @@ The SMR software path: SMR_analysis/smr-1.3.1-linux-x86_64.zip
 
 [1000G_EUR.bed](https://zenodo.org/records/13738569/files/1kg_hg38_filtered.bed.gz?download=1)
 
-https://zenodo.org/records/13738569/files/1kg_hg38_filtered.bim.gz?download=1
-https://zenodo.org/records/13738569/files/1kg_hg38_filtered.fam.gz?download=1
+[1000G_EUR.bim](https://zenodo.org/records/13738569/files/1kg_hg38_filtered.bim.gz?download=1)
+
+[1000G_EUR.bim](https://zenodo.org/records/13738569/files/1kg_hg38_filtered.fam.gz?download=1)
 
 
 https://zenodo.org/records/6614170/files/1000G_EUR.bim?download=1

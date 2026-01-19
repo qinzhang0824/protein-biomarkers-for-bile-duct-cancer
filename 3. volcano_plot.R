@@ -18,8 +18,8 @@ res <- mr.or %>% filter(!is.na(pval)) %>%
   mutate( Gene = rownames(id.exposure))
 
 sig.res <- res %>% mutate(group=case_when(
-  (pval < 0.05/1178 & or > 1) ~ "Positively associated",
-  (pval < 0.05/1178 & or < 1) ~ "Negatively associated",
+  (pval < 0.05/1193 & or > 1) ~ "Positively associated",
+  (pval < 0.05/1193 & or < 1) ~ "Negatively associated",
   .default = "Not significant"))
 
 
@@ -30,7 +30,7 @@ label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("NCAN"))
 label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("SERPINA1"))
 label <-c("NCAN","SERPINA1")
 
-my_label <- paste0( "P<4.25 x 10-5 ; ",
+my_label <- paste0( "P<4.19 x 10-5 ; ",
                     "Positively associated:",table(sig.res$group)[1]," ; ",
                     "Negatively associated:",table(sig.res$group)[2])
 p <- ggscatter(sig.res,
@@ -43,7 +43,7 @@ p <- ggscatter(sig.res,
                palette = c("#D01910","#00599F","#CCCCCC"),
                ylim = c(-0.1,5),xlim=c(0,3.0))+
   theme_base()+
-  geom_hline(yintercept = -log10(0.05/1178), linetype="dashed", color = "#222222") +
+  geom_hline(yintercept = -log10(0.05/1193), linetype="dashed", color = "#222222") +
   geom_vline(xintercept = 1 , linetype="dashed", color = "#222222") +
   #geom_vline(xintercept = -1, linetype="dashed", color = "#222222") +
   labs(subtitle = my_label)+

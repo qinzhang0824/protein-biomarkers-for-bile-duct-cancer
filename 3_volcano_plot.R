@@ -25,7 +25,7 @@ sig.res <- res %>% mutate(group=case_when(
 
 sig.res <- sig.res %>% mutate(group=factor(group,levels = c("Positively associated","Negatively associated","Not significant")))
 
-label <-subset(sig.res$id.exposure,sig.res$pval < (0.05/1178))
+label <-subset(sig.res$id.exposure,sig.res$pval < (0.05/1193))
 label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("NCAN"))
 label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("SERPINA1"))
 label <-c("NCAN","SERPINA1")
@@ -116,7 +116,7 @@ p <- ggscatter(sig.res,
                palette = c("#D01910","#00599F","#CCCCCC"),
                ylim = c(-0.1,5),xlim=c(0,3.0))+
   theme_base()+
-  geom_hline(yintercept = -log10(0.05/1178), linetype="dashed", color = "#222222") +
+  geom_hline(yintercept = -log10(0.05/1193), linetype="dashed", color = "#222222") +
   geom_vline(xintercept = 1 , linetype="dashed", color = "#222222") +
   #geom_vline(xintercept = -1, linetype="dashed", color = "#222222") +
   labs(subtitle = my_label)+

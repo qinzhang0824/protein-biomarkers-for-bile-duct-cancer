@@ -3,6 +3,8 @@ library(ggplot2)
 library(ggsci)
 library("ggpubr")
 library(forestplot)
+library(data.table)
+library(grid)
 
 mr.or <-fread("final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
 mr.or1 <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
@@ -28,7 +30,7 @@ tabletext <- cbind(c(NA,"Exposure",out_multi$id.exposure),
 
 
 pforest <- forestplot(labeltext=tabletext, 
-                      graph.pos=4
+                      graph.pos=4,
                       col=fpColors(box="#00468B", lines="black", zero = "red"),
                       mean=c(NA,NA,out_multi$or),
                       lower=c(NA,NA,out_multi$or_lci95), 

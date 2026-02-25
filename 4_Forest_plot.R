@@ -5,6 +5,7 @@ library("ggpubr")
 library(forestplot)
 library(data.table)
 library(grid)
+library(dplyr)
 
 mr.or <-fread("final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
 mr.or1 <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)

@@ -40,6 +40,17 @@ unzip eQTL_besd_lite.zip
 
 #### Download eQTL "cis-eQTL-SMR_20191212.tar.gz"
 wget -O /SMR_analysis/cis-eQTL-SMR_20191212.tar.gz "https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz"
+tar -xzf /SMR_analysis/cis-eQTL-SMR_20191212.tar.gz
+gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.epi.gz
+gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.besd.gz
+gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.esi.gz
+
+
+
+
+
+
+
 
 
 

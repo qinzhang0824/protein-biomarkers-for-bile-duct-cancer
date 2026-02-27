@@ -98,7 +98,7 @@ remotes::install_github("MRCIEU/TwoSampleMR")
 
 The summary data-based Mendelian randomization (SMR) and HEIDI analyses were conducted using SMR software version 1.3.1. For the SMR test
 
-**SMR software was upload to SMA_analysis folder**
+**SMR software was upload to SMR_analysis folder**
 
 The SMR software path: SMR_analysis/smr-1.3.1-linux-x86_64.zip
 

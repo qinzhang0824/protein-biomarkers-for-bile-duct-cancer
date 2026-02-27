@@ -18,12 +18,30 @@ gunzip /Raw_input_data/ieu-b-4915.vcf.gz
 wget -O /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz" 
 gunzip /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz
 
-##################################################### Download SMR relatated files
+##################################################### Download Summary‑data‑based MR (SMR) and HEIDI test relatated files
 mkdir /SMR_analysis
 
-####### Download SMR software
+####### 1.Download SMR software
 wget -O /SMR_analysis/smr-1.4.0-linux-x86_64.zip "https://yanglab.westlake.edu.cn/software/smr/download/smr-1.4.0-linux-x86_64.zip"
 cd /SMR_analysis
 unzip smr-1.4.0-linux-x86_64.zip
 
-####### 
+####### 2.Download PLINK GRCh37 1000 Genomes config files
+wget -O /SMR_analysis/1000G_EUR.bed "https://zenodo.org/records/6614170/files/1000G_EUR.bed?download=1"
+wget -O /SMR_analysis/1000G_EUR.bim "https://zenodo.org/records/6614170/files/1000G_EUR.bim?download=1"
+wget -O /SMR_analysis/1000G_EUR.fam "https://zenodo.org/records/6614170/files/1000G_EUR.fam?download=1"
+
+####### 3.Download eQTL data files
+#### Download eQTL GTEx_V8
+wget -O /SMR_analysis/GTEx_V8_cis_eqtl_summary_lite.tar "https://yanglab.westlake.edu.cn/data/SMR/GTEx_V8_cis_eqtl_summary_lite.tar"
+tar -xf /SMR_analysis/GTEx_V8_cis_eqtl_summary_lite.tar
+cd /SMR_analysis/GTEx_V8_cis_eqtl_summary_lite
+unzip eQTL_besd_lite.zip
+
+#### Download eQTL "cis-eQTL-SMR_20191212.tar.gz"
+wget -O /SMR_analysis/cis-eQTL-SMR_20191212.tar.gz "https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz"
+
+
+
+
+

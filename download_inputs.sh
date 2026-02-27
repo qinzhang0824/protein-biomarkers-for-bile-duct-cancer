@@ -17,3 +17,8 @@ gunzip /Raw_input_data/ieu-b-4915.vcf.gz
 ####### 3.Download Validation cohort 2(GCST90043859)
 wget -O /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz" 
 gunzip /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz
+
+## Download SMR relatated files
+mkdir /SMR_analysis
+
+####### Download SMR software

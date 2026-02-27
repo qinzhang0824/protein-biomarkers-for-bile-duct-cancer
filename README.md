@@ -181,7 +181,7 @@ SERPINA1 and NCAN plasma proteins data link:
 
 [Pietzner.a1_Antitrypsin_3580_25.txt.gz](https://download.decode.is/form/folder/proteomics)
 
-[Ferkingstad.15573_110_NCAN_CSPG3.txt](https://omicscience.org/data_usage_agreement.php)
+[Ferkingstad.15573_110_NCAN_CSPG3.txt](https://www.synapse.org/Synapse:syn51824537)
 
 Figure4 colocalization plot as follows:
 

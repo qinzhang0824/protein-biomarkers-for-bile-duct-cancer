@@ -1,6 +1,6 @@
 ####### Note: This "download_inputs.sh" script performs retrieval, decompression, renaming, and placement where possible, and otherwise fails with a clear message stating exactly what to download, from where, and under what filename to place it
 
-####### Download three GWAS summary data of Bile tract cancer (BTC) patients
+## Download three GWAS summary data of Bile tract cancer (BTC) patients
 mkdir /Raw_input_data
 
 ####### 1.Download Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC/FinnGen R12)

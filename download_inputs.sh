@@ -1,6 +1,6 @@
 ####### Note: This "download_inputs.sh" script performs retrieval, decompression, renaming, and placement where possible, and otherwise fails with a clear message stating exactly what to download, from where, and under what filename to place it
 
-## Download three GWAS summary data of Bile tract cancer (BTC) patients
+################################################### Download three GWAS summary data of Bile tract cancer (BTC) patients
 mkdir /Raw_input_data
 
 ####### 1.Download Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC/FinnGen R12)
@@ -18,7 +18,12 @@ gunzip /Raw_input_data/ieu-b-4915.vcf.gz
 wget -O /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz" 
 gunzip /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz
 
-## Download SMR relatated files
+##################################################### Download SMR relatated files
 mkdir /SMR_analysis
 
 ####### Download SMR software
+wget -O /SMR_analysis/smr-1.4.0-linux-x86_64.zip "https://yanglab.westlake.edu.cn/software/smr/download/smr-1.4.0-linux-x86_64.zip"
+cd /SMR_analysis
+unzip smr-1.4.0-linux-x86_64.zip
+
+####### 

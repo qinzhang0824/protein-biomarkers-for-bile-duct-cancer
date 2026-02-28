@@ -1,0 +1,111 @@
+library(TwoSampleMR)
+library(readr)
+library(dplyr)
+library(data.table)
+library(readxl)
+library(plyr)
+library(MRPRESSO)
+library("locuscomparer")
+library(coloc)
+
+#####################################################################################NCAN
+#t.chr <-'chr19'
+t.chr <-'19'
+t.pos <-19329924
+
+out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_NCAN.xls",sep='\t',header = T)
+gwas <- out[out$chr.outcome=="19",]
+gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
+
+protein <- fread("/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
+protein$phenotype <- "Proteins"
+protein <- as.data.frame(protein)
+data <- format_data(protein,type = "exposure",
+                    header = TRUE,
+                    phenotype_col = "phenotype",
+                    snp_col = "rsids",
+                    beta_col = "Beta",
+                    se_col = "SE",
+                    eaf_col = "ImpMAF",
+                    effect_allele_col = "effectAllele",
+                    other_allele_col = "otherAllele",
+                    pval_col = "Pval",
+                    chr_col = "Chrom",
+                    samplesize_col = "N",
+                    id_col = "Proteins",
+                    pos_col = "Pos")
+pQTL <-data[data$chr.exposure=="chr19",]
+pQTL <- pQTL[pQTL$pos.exposure >t.pos-1000000 & pQTL$pos.exposure < t.pos+1000000,]
+
+########## finngen case 2298
+gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
+gwas$MAF <- ifelse(gwas$eaf.outcome<0.5,gwas$eaf.outcome,1-gwas$eaf.outcome)
+pQTL$MAF <- ifelse(pQTL$eaf.exposure<0.5,pQTL$eaf.exposure,1-pQTL$eaf.exposure)
+
+gwas <- gwas[gwas$MAF != 'NA',]
+pQTL <- pQTL[pQTL$MAF !='NA',]
+
+sameSNP <- intersect(pQTL$SNP,gwas$SNP)
+
+pQTL <- pQTL[pQTL$SNP %in% sameSNP,]
+gwas <- gwas[gwas$SNP %in% sameSNP,]
+
+result <- coloc.abf(dataset1=list(pvalues=gwas$pval.outcome, snp=gwas$SNP,MAF=gwas$MAF,beta=gwas$beta.outcome, varbeta=gwas$se.outcome^2,type="cc", s=gwas$s[1], N=gwas$samplesize.outcome),dataset2=list(pvalues=pQTL$pval.exposure, snp=pQTL$SNP,MAF=pQTL$MAF,beta=pQTL$beta.exposure, varbeta=pQTL$se.exposure^2, type="quant", N=pQTL$samplesize.exposure), MAF=pQTL$MAF)
+
+gwas_fn <- gwas[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
+pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
+
+locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs2228603")
+ggsave('/final_results/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
+
+################################################################################################################################## SERPINA1
+
+t.chr <-'14' ###finngen protein
+t.pos <-94844947
+
+out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_SERPINA1.xls",sep='\t',header = T)
+gwas <- out[out$chr.outcome=="14",]
+gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
+
+protein <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
+protein$phenotype <- "Proteins"
+protein <- as.data.frame(protein)
+data <- format_data(protein,type = "exposure",
+                    header = TRUE,
+                    phenotype_col = "phenotype",
+                    snp_col = "rsid",
+                    beta_col = "Effect",
+                    se_col = "StdErr",
+                    eaf_col = "MinFreq",
+                    effect_allele_col = "Allele1",
+                    other_allele_col = "Allele2",
+                    pval_col = "Pvalue",
+                    chr_col = "chr",
+                    samplesize_col = "TotalSampleSize",
+                    id_col = "Proteins",
+                    pos_col = "pos")
+pQTL <-data[data$chr.exposure=="chr14",]
+pQTL <- pQTL[pQTL$pos.exposure >t.pos-1000000 & pQTL$pos.exposure < t.pos+1000000,]
+
+gwas$MAF <- ifelse(gwas$eaf.outcome<0.5,gwas$eaf.outcome,1-gwas$eaf.outcome)
+pQTL$MAF <- ifelse(pQTL$eaf.exposure<0.5,pQTL$eaf.exposure,1-pQTL$eaf.exposure)
+
+gwas <- gwas[gwas$MAF != 'NA',]
+pQTL <- pQTL[pQTL$MAF !='NA',]
+
+sameSNP <- intersect(pQTL$SNP,gwas$SNP)
+
+pQTL <- pQTL[pQTL$SNP %in% sameSNP,]
+gwas <- gwas[gwas$SNP %in% sameSNP,]
+
+##### finngen
+gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
+
+result <- coloc.abf(dataset1=list(pvalues=gwas$pval.outcome, snp=gwas$SNP,MAF=gwas$MAF,beta=gwas$beta.outcome, varbeta=gwas$se.outcome^2,type="cc", s=gwas$s[1], N=gwas$samplesize.outcome),dataset2=list(pvalues=pQTL$pval.exposure, snp=pQTL$SNP,MAF=pQTL$MAF,beta=pQTL$beta.exposure, varbeta=pQTL$se.exposure^2, type="quant", N=pQTL$samplesize.exposure), MAF=pQTL$MAF)
+
+gwas_fn <- gwas[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
+pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
+
+locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs28929474")
+
+ggsave('/final_results/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)

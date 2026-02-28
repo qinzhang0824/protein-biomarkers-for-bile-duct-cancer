@@ -13,11 +13,11 @@ library(coloc)
 t.chr <-'19'
 t.pos <-19329924
 
-out <- fread ("intermediate files/finngen_R12_C3_Bile_outcome.MR.format_NCAN.xls",sep='\t',header = T)
+out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_NCAN.xls",sep='\t',header = T)
 gwas <- out[out$chr.outcome=="19",]
 gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
 
-protein <- fread("Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
+protein <- fread("/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
 protein$phenotype <- "Proteins"
 protein <- as.data.frame(protein)
 data <- format_data(protein,type = "exposure",
@@ -63,11 +63,11 @@ ggsave('final results/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
 t.chr <-'14' ###finngen protein
 t.pos <-94844947
 
-out <- fread ("intermediate files/finngen_R12_C3_Bile_outcome.MR.format_SERPINA1.xls",sep='\t',header = T)
+out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_SERPINA1.xls",sep='\t',header = T)
 gwas <- out[out$chr.outcome=="14",]
 gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
 
-protein <- fread("Pietzner.a1_Antitrypsin_3580_25.txt.gz",sep='\t')
+protein <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
 protein$phenotype <- "Proteins"
 protein <- as.data.frame(protein)
 data <- format_data(protein,type = "exposure",

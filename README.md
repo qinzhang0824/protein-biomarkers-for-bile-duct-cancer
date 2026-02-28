@@ -59,6 +59,11 @@ Users running Platform: x86_64-pc-linux-gnu and Running under: Ubuntu 20.04.6 LT
 ```r
 install.packages("remotes")
 remotes::install_github("MRCIEU/TwoSampleMR")
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("VariantAnnotation")
+
 ```
 
 **other attached packages and versions**

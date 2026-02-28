@@ -3,22 +3,20 @@
 
 # Data Folder
 
-## 1. Raw input data
+## Raw input data list
 
-(1) Instrumental variables of plasma proteins used in MR analysis
+1. Instrumental variables of plasma proteins used in MR analysis
 
 The reference for the instrumental variables of plasma proteins are (DOI: 10.1186/s13073-023-01229-9)
-The raw instrumental variables of plasma proteins is "Raw_input_data/Plasma.Protein_Instruments.Raw.xls"
-
 The cis-pQTLs were selected based on the following criteria:
 (a). SNPs linked to any protein with a significance level of P < 5×10-8 were included;
 (b). SNPs and proteins located within the Major Histocompatibility Complex (MHC) region on chromosome 6 (25.5–34.0 Mb) were excluded because of the intricate linkage disequilibrium (LD) patterns in this area;
 (c). subsequently, LD clumping was performed to identify independent protein quantitative trait loci (pQTLs) for each protein, ensuring that variants had an r² value less than 0.001;
 (d). F-statistics genetic instruments were higher than 10
 
-Ultimately, the instrumental variables file used for analysis is "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
+Ultimately, the instrumental variables file used for analysis is "/Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt"
 
-(2) Three GWAS summary data of Bile tract cancer (BTC) patients
+2. Three GWAS summary data of Bile tract cancer (BTC) patients
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 
@@ -37,7 +35,11 @@ Notes:
 
 (c). The raw GCST90043859 data link: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz
 
-**Download the above three files to the "Raw input data" folder to prepare for the subsequent analysis.**
+**Download the above three files to the "Raw_input_data" folder to prepare for the subsequent analysis.**
+
+3. Two target protein GWAS data
+NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
+SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
 
 ## 2. intermediate files
 

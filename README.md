@@ -48,9 +48,9 @@ NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
 SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
 
 
-# Prerequisites
+# 2.Prerequisites
 
-## R dependencies
+## 2.1 R dependencies
 
 ### R version 4.4.3 
 
@@ -70,32 +70,6 @@ remotes::install_github("MRCIEU/TwoSampleMR")
 | dplyr_1.1.4 | locuscomparer_1.0.0 | ieugwasr_1.0.1 | ggpubr_0.6.2 |
 | data.table_1.17.8 | coloc_5.2.3 | S4Vectors_0.44.0 | forestplot_3.1.7 |
 | readxl_1.4.5 | gwasglue_0.0.0.9000 | rio_1.2.4 | ggthemes_5.2.0 |
-
-## Summary‑data‑based MR (SMR) and HEIDI test
-
-The summary data-based Mendelian randomization (SMR) and HEIDI analyses were conducted using SMR software version 1.3.1. For the SMR test
-
-**SMR software was upload to SMR_analysis folder**
-
-The SMR software path: SMR_analysis/smr-1.3.1-linux-x86_64.zip
-
-### 1000G data
-
-[1000G_EUR.bed](https://zenodo.org/records/6614170/files/1000G_EUR.bed?download=1)
-
-[1000G_EUR.bim](https://zenodo.org/records/6614170/files/1000G_EUR.bim?download=1)
-
-[1000G_EUR.fam](https://zenodo.org/records/6614170/files/1000G_EUR.fam?download=1)
-
-**Download the above three files to the "SMR_analysis" folder to prepare for the subsequent analysis.**
-
-### eQTL data link
-
-GTEx_V8 data link: https://yanglab.westlake.edu.cn/data/SMR/GTEx_V8_cis_eqtl_summary_lite.tar
-
-eQTL data link: https://molgenis26.gcc.rug.nl/downloads/eqtlgen/cis-eqtl/SMR_formatted/cis-eQTL-SMR_20191212.tar.gz
-
-**Download the above three files to the "SMR_analysis" folder to prepare for the subsequent analysis.**
 
 
 # Getting Started

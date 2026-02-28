@@ -18,7 +18,7 @@ gunzip /Raw_input_data/ieu-b-4915.vcf.gz
 wget -O /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90043001-GCST90044000/GCST90043859/GCST90043859_buildGRCh37.tsv.gz" 
 gunzip /Raw_input_data/GCST90043859_buildGRCh37.tsv.gz
 
-##################################################### Download Summary‑data‑based MR (SMR) and HEIDI test relatated files
+##################################################### Download Summary‑data‑based MR (SMR) and HEIDI test analysis-related files
 mkdir /SMR_analysis
 
 ####### 4.Download SMR software
@@ -45,7 +45,16 @@ gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.tx
 gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.besd.gz
 gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.esi.gz
 
-
+##################################################### Download Bayesian colocalization analysis-related files.
+#### 8.Download target protein GWAS raw data files
+## 8.1 The method for downloading the original GWAS data of the protein NCAN is as follows:
+# data link : https://www.synapse.org/Synapse:syn51824537
+# step1: Create one SYNAPSE account
+# step2: Find a file named "CSPG3_15573_110.txt.gz" (The name of the gene NCAN is also known as CSPG3)
+# step3: Click “Download” and save the file to the folder named “Raw_input_data”
+# step4: Change the file name
+mv /Raw_input_data/CSPG3_15573_110.txt.gz /Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt.gz
+gunzip /Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt.gz
 
 
 

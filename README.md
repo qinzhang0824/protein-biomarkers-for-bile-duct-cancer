@@ -78,7 +78,7 @@ protein-biomarkers-for-bile-duct-cancer/R_env
 Data preparation as follows:
 
 ```r
-Rscript 1.data_process.R
+Rscript 1_data_process.R
 ```
 
 ## Step 2: MR analysis
@@ -86,7 +86,7 @@ Rscript 1.data_process.R
 MR analysis as follows:
 
 ```r
-Rscript 2.MR_analysis.R
+Rscript 2_MR_analysis.R
 ```
 
 ## Step 3: Figure2 plot
@@ -94,7 +94,7 @@ Rscript 2.MR_analysis.R
 MR analysis as follows:
 
 ```r
-Rscript 3. volcano_plot.R
+Rscript 3_volcano_plot.R
 ```
 
 ## Step 4: Figure3 plot
@@ -102,7 +102,7 @@ Rscript 3. volcano_plot.R
 Figure3 forest plot as follows:
 
 ```r
-Rscript 4.Forest_plot.R
+Rscript 4_Forest_plot.R
 ```
 
 ## Step 5: Figure4 plot
@@ -116,7 +116,7 @@ SERPINA1 and NCAN plasma proteins data link:
 Figure4 colocalization plot as follows:
 
 ```r
-Rscript 5. colocalization_analysis.R
+Rscript 5_colocalization_analysis.R
 ```
 
 ## Step 6: Figure5 plot
@@ -138,6 +138,12 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 <img width="1026" height="727" alt="image" src="https://github.com/user-attachments/assets/94b4dbdc-ccdb-45db-8cbf-fda88974be59" />
 
 ## Step 7: SMR and HEIDI tests
+
+prepare SMR analysis input files:
+
+```r
+Rscript 6_SMR_analysis.R
+```
 
 eQTLGen consortium analysis:
 

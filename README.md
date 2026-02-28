@@ -66,8 +66,9 @@ BiocManager::install("VariantAnnotation")
 
 ```
 
+**sessionInfo() output and R environment definition file path:**
 
-* protein-biomarkers-for-bile-duct-cancer/R_env *
+protein-biomarkers-for-bile-duct-cancer/R_env 
 
 
 # Getting Started

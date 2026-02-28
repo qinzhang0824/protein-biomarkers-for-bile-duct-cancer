@@ -3,6 +3,13 @@
 
 # 1.Raw input data list
 
+The download/setup script (download_inputs.sh) that performs retrieval, decompression, renaming, and placement where possible, and otherwise fails with a clear message stating exactly what to download, from where, and under what filename to place it.
+
+```bash
+#!/bin/bash
+sh download_input.sh
+```
+
 ## 1.1 Instrumental variables of plasma proteins used in MR analysis
 
 The reference for the instrumental variables of plasma proteins are (DOI: 10.1186/s13073-023-01229-9)
@@ -35,7 +42,7 @@ Notes:
 
 **Download the above three files to the "Raw_input_data" folder to prepare for the subsequent analysis.**
 
-## 1.3 Two target protein GWAS data
+## 1.3 Two target proteins GWAS data path
 NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
 
 SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"

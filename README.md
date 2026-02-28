@@ -5,7 +5,7 @@
 
 ## Raw input data list
 
-1. Instrumental variables of plasma proteins used in MR analysis
+# 1. Instrumental variables of plasma proteins used in MR analysis
 
 The reference for the instrumental variables of plasma proteins are (DOI: 10.1186/s13073-023-01229-9)
 The cis-pQTLs were selected based on the following criteria:
@@ -16,7 +16,7 @@ The cis-pQTLs were selected based on the following criteria:
 
 Ultimately, the instrumental variables file used for analysis is "/Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt"
 
-2. Three GWAS summary data of Bile tract cancer (BTC) patients
+# 2. Three GWAS summary data of Bile tract cancer (BTC) patients
 
 Three GWAS summary data of BTC patients and controls of European ancestry from three public cohorts.
 
@@ -37,42 +37,11 @@ Notes:
 
 **Download the above three files to the "Raw_input_data" folder to prepare for the subsequent analysis.**
 
-3. Two target protein GWAS data
+# 3. Two target protein GWAS data
 NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
 
 SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
 
-## 2. intermediate files
-
-After obtaining the GWAS data and plasma protein instrumental variables, we extracted the SNP information of the exposure and outcome, harmonized the data, and ultimately ensured that the effect alleles of SNPs in the exposure and outcome data were consistent. 
-
-The three obtained datasets are as follows：
-
-(a). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls": C3_BILIARY_GALLBLADDER_EXALLC harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
-
-(c). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls": ieu-b-4915 harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
-
-(c). "intermediate files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls": GCST90043859 harmonized with  "Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls"
-
-## 3.final results
-
-### final results/Discovery cohort
-
-"mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC)
-
-"mr_result_exposure.cis-PlasmaProtein_outcome.finn12_steiger_direction.xls" : The results of the Steiger test for the Discovery cohort(C3_BILIARY_GALLBLADDER_EXALLC)
-
-### final results/Validation cohort 1
-
-"mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Validation cohort 1(ieu-b-4915)
-
-"mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(ieu-b-4915)
-
-### final results/Validation cohort 2
-
-"mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls" : The results of the MR analysis for the Validation cohort 1(GCST90043859)
-
-"mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls" : The results of the Steiger test for the Validation cohort 1(GCST90043859)
 
 # Prerequisites
 

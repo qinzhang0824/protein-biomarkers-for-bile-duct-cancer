@@ -1,4 +1,10 @@
 #1.step  gwas
+library(dplyr)
+library(data.table)
+library(readxl)
+library(plyr)
+
+
 g <- fread ("/finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)
 
 f<-select(g,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)

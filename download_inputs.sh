@@ -48,7 +48,7 @@ gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.tx
 ##################################################### Download Bayesian colocalization analysis-related files.
 #### 8.Download target protein GWAS raw data files
 ## 8.1 The method for downloading the original GWAS data of the protein NCAN is as follows:
-# data link : https://www.synapse.org/Synapse:syn51824537
+# data link: https://www.synapse.org/Synapse:syn51824537
 # step1: Create one SYNAPSE account
 # step2: Find a file named "CSPG3_15573_110.txt.gz" (The name of the gene NCAN is also known as CSPG3)
 # step3: Click “Download” and save the file to the folder named “Raw_input_data”
@@ -56,10 +56,13 @@ gunzip /SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.tx
 mv /Raw_input_data/CSPG3_15573_110.txt.gz /Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt.gz
 gunzip /Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt.gz
 
-
-
-
-
+## 8.2 The method for downloading the original GWAS data of the protein SERPINA1 is as follows:
+# step1: get data download link. Fill in your email address, name, and institution information at the website "https://download.decode.is/form/folder/proteomics", and you will obtain the download link.
+# Use the following link to download files for proteomics. The link is valid for 5 days.(For example: https://download.decode.is/folder/00662ef2-1488-4541-ab0a-6cca1d39c792)
+# step2: Find a file named "3580_25_SERPINA1_a1_Antitrypsin.txt.gz"
+wget -O /Raw_input_data/3580_25_SERPINA1_a1_Antitrypsin.txt.gz https://download.decode.is/s3/download?token=00662ef2-1488-4541-ab0a-6cca1d39c792&file=3580_25_SERPINA1_a1_Antitrypsin.txt.gz
+mv /Raw_input_data/3580_25_SERPINA1_a1_Antitrypsin.txt.gz /Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt.gz
+gunzip /Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt.gz
 
 
 

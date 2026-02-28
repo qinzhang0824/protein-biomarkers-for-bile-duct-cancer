@@ -39,6 +39,7 @@ Notes:
 
 3. Two target protein GWAS data
 NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
+
 SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
 
 ## 2. intermediate files

@@ -22,7 +22,7 @@ library("ggpubr")
 library(forestplot)
 
 ############################################################################################################ read Instruments variables of plasma proteins
-protein <- fread("Raw_input_data/Instrumental variables of plasma proteins used in MR analysis.xls",sep='\t')
+protein <- fread("Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt",sep='\t')
 protein$phenotype <- "Proteins"
 protein <- as.data.frame(protein)
 protein.mr <- format_data(protein,type = "exposure",

@@ -6561,4 +6561,41 @@ Warning messages:
 If this is what you expected, this is not a problem.
 If this is not as small as you expected, please check you supplied var(beta) and not sd(beta) for the varbeta argument. If that's not the explanation, please check the 02_data vignette.
 2: In sdY.est(d$varbeta, d$MAF, d$N) :
-  estimating sdY from maf and varbeta, please directly supply sdY if known
+
+Options:
+--bfile SMR_analysis/1000G_EUR
+--gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt
+--beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense
+--out SMR_analysis/FinngenR12.cis.eQTL
+
+Reading GWAS summary data from [SMR_analysis/SMR_GWAS_FinngenR12_input.txt].
+GWAS summary data of 19634033 SNPs to be included from [SMR_analysis/SMR_GWAS_FinngenR12_input.txt].
+Reading eQTL SNP information from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.esi].
+8932843 SNPs to be included from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.esi].
+Reading PLINK FAM file from [SMR_analysis/1000G_EUR.fam].
+503 individuals to be included from [SMR_analysis/1000G_EUR.fam].
+Reading PLINK BIM file from [SMR_analysis/1000G_EUR.bim].
+8550156 SNPs to be included from [SMR_analysis/1000G_EUR.bim].
+Checking the consistency of the alleles of each SNP between pairwise data sets (including the GWAS summary data, the eQTL summary data and the LD reference data).
+6903591 SNPs are included after allele checking.
+Reading PLINK BED file from [SMR_analysis/1000G_EUR.bed] in SNP-major format ...
+Genotype data for 503 individuals and 6903591 SNPs to be included from [SMR_analysis/1000G_EUR.bed].
+Calculating allele frequencies ...
+Checking the consistency of allele frequency of each SNP between pairwise data sets (including the GWAS summary data, the eQTL summary data and the LD reference data).
+5448 SNPs (0.08% <= 5.00%) with allele frequency differences > 0.20 between any pair of the data sets are excluded from the analysis.
+Reading eQTL summary data...
+Reading eQTL probe information from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.epi].
+19250 Probes to be included from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.epi].
+Reading eQTL summary data from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.besd].
+eQTL summary data of 19250 Probes to be included from [SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense.besd].
+
+Performing SMR analysis (SMR and HEIDI tests) for 15638 probes (with at least a cis-eQTL at p < 5.00e-08)...
+For each probe, the analysis will only include SNPs with eQTL p-values < 1.565400e-03,
+then exclude SNPs with LD r-squared between top-SNP > 0.90 or < 0.05, and further exclude one of each pair of the remaining SNPs with LD r-squared > 0.90.
+Results of 15638 probes have been saved in file SMR_analysis/FinngenR12.cis.eQTL.smr.
+
+Analysis completed: 11:24:9,Tue Apr 15,2025
+Computational time: 0:8:47
+  
+
+estimating sdY from maf and varbeta, please directly supply sdY if known

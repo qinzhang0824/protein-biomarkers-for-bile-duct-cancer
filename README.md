@@ -104,13 +104,13 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 eQTLGen consortium analysis:
 
 ```r
-SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out ./final results/FinngenR12.cis.eQTL
+SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out /SMR_analysis/FinngenR12.cis.eQTL
 ```
 
 eQTL.GTEX.v8 analysis:
 
 ```r
-SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out ./final results/FinngenR12.cis.eQTL.GTEX.v8
+SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out /SMR_analysis/FinngenR12.cis.eQTL.GTEX.v8
 ```
 
 

@@ -399,9 +399,7 @@ locuscompare(in_fn1 =pQTL_fn.SERPINA1 , in_fn2 = gwas_fn.SERPINA1, title1 = 'pQT
 ggsave('/Final_results/Figures/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
 ###############################################################################################################################  SMR input
 
-g <- fread ("intermediate_files/finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)
-
-f<-select(g,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)
+f<-select(bile.finn,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)
 colnames(f)<-c("SNP","A1","A2","freq","b","se","p","n")
 
 f_clean <- f[!apply(f, 1, function(row) {any(is.na(row) | row == "")}), , drop = FALSE]

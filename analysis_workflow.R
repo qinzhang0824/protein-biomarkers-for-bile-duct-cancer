@@ -295,7 +295,7 @@ pforest <- forestplot(labeltext=tabletext,
                                      xlab=gpar(cex = 1.4),
                                      title=gpar(cex = 1.2))
 )
-pdf("final results/Figure3_Plasma_Protein_vs_Discovery_and_validation_Forest.pdf", width=12, height=6)
+pdf("Final_results/Figures/Figure3_Plasma_Protein_vs_Discovery_and_validation_Forest.pdf", width=12, height=6)
 pforest
 dev.off()
 ######################################################################################################### Figure4 plot 

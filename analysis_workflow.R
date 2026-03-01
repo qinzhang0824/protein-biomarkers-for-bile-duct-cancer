@@ -303,14 +303,13 @@ dev.off()
 t.chr <-'19'
 t.pos <-19329924
 
-out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_NCAN.xls",sep='\t',header = T)
-gwas <- out[out$chr.outcome=="19",]
-gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
+gwas.NCAN <- bile.finn[bile.finn$chr.outcome=="19",]
+gwas.NCAN <- gwas.NCAN[gwas.NCAN$pos.outcome >t.pos-1000000 & gwas.NCAN$pos.outcome < t.pos+1000000,]
 
-protein <- fread("/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
-protein$phenotype <- "Proteins"
-protein <- as.data.frame(protein)
-data <- format_data(protein,type = "exposure",
+protein.NCAN <- fread("/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt",sep='\t')
+protein.NCAN$phenotype <- "Proteins"
+protein.NCAN <- as.data.frame(protein.NCAN)
+data.NCAN <- format_data(protein.NCAN,type = "exposure",
                     header = TRUE,
                     phenotype_col = "phenotype",
                     snp_col = "rsids",
@@ -324,29 +323,29 @@ data <- format_data(protein,type = "exposure",
                     samplesize_col = "N",
                     id_col = "Proteins",
                     pos_col = "Pos")
-pQTL <-data[data$chr.exposure=="chr19",]
-pQTL <- pQTL[pQTL$pos.exposure >t.pos-1000000 & pQTL$pos.exposure < t.pos+1000000,]
+pQTL.NCAN <-data.NCAN[data.NCAN$chr.exposure=="chr19",]
+pQTL.NCAN <- pQTL.NCAN[pQTL.NCAN$pos.exposure >t.pos-1000000 & pQTL.NCAN$pos.exposure < t.pos+1000000,]
 
 ########## finngen case 2298
-gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
-gwas$MAF <- ifelse(gwas$eaf.outcome<0.5,gwas$eaf.outcome,1-gwas$eaf.outcome)
-pQTL$MAF <- ifelse(pQTL$eaf.exposure<0.5,pQTL$eaf.exposure,1-pQTL$eaf.exposure)
+gwas.NCAN$s <-as.numeric(2298/gwas.NCAN$samplesize.outcome)
+gwas.NCAN$MAF <- ifelse(gwas.NCAN$eaf.outcome<0.5,gwas.NCAN$eaf.outcome,1-gwas.NCAN$eaf.outcome)
+pQTL.NCAN$MAF <- ifelse(pQTL.NCAN$eaf.exposure<0.5,pQTL.NCAN$eaf.exposure,1-pQTL.NCAN$eaf.exposure)
 
-gwas <- gwas[gwas$MAF != 'NA',]
-pQTL <- pQTL[pQTL$MAF !='NA',]
+gwas.NCAN <- gwas.NCAN[gwas.NCAN$MAF != 'NA',]
+pQTL.NCAN <- pQTL.NCAN[pQTL.NCAN$MAF !='NA',]
 
-sameSNP <- intersect(pQTL$SNP,gwas$SNP)
+sameSNP.NCAN <- intersect(pQTL.NCAN$SNP,gwas.NCAN$SNP)
 
-pQTL <- pQTL[pQTL$SNP %in% sameSNP,]
-gwas <- gwas[gwas$SNP %in% sameSNP,]
+pQTL.NCAN <- pQTL.NCAN[pQTL.NCAN$SNP %in% sameSNP.NCAN,]
+gwas.NCAN <- gwas.NCAN[gwas.NCAN$SNP %in% sameSNP.NCAN,]
 
-result <- coloc.abf(dataset1=list(pvalues=gwas$pval.outcome, snp=gwas$SNP,MAF=gwas$MAF,beta=gwas$beta.outcome, varbeta=gwas$se.outcome^2,type="cc", s=gwas$s[1], N=gwas$samplesize.outcome),dataset2=list(pvalues=pQTL$pval.exposure, snp=pQTL$SNP,MAF=pQTL$MAF,beta=pQTL$beta.exposure, varbeta=pQTL$se.exposure^2, type="quant", N=pQTL$samplesize.exposure), MAF=pQTL$MAF)
+result.NCAN <- coloc.abf(dataset1=list(pvalues=gwas.NCAN$pval.outcome, snp=gwas.NCAN$SNP,MAF=gwas.NCAN$MAF,beta=gwas.NCAN$beta.outcome, varbeta=gwas.NCAN$se.outcome^2,type="cc", s=gwas.NCAN$s[1], N=gwas.NCAN$samplesize.outcome),dataset2=list(pvalues=pQTL.NCAN$pval.exposure, snp=pQTL.NCAN$SNP,MAF=pQTL.NCAN$MAF,beta=pQTL.NCAN$beta.exposure, varbeta=pQTL.NCAN$se.exposure^2, type="quant", N=pQTL.NCAN$samplesize.exposure), MAF=pQTL.NCAN$MAF)
 
-gwas_fn <- gwas[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
-pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
+gwas_fn.NCAN <- gwas.NCAN[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
+pQTL_fn.NCAN <- pQTL.NCAN[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
 
-locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs2228603")
-ggsave('/final_results/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
+locuscompare(in_fn1 =pQTL_fn.NCAN , in_fn2 = gwas_fn.NCAN, title1 = 'pQTL',title2 = 'GWAS',snp="rs2228603")
+ggsave('/Final_results/Figures/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
 
 ####################################################################### SERPINA1
 

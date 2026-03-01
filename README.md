@@ -73,53 +73,15 @@ protein-biomarkers-for-bile-duct-cancer/R_env
 
 # 3. Analysis workflow
 
-## Step 1: Data preparation
+## Step 1: MR analysis and Figure2-4 plot 
 
-Data preparation as follows:
-
-```r
-Rscript 1_data_process.R
-```
-
-## Step 2: MR analysis
-
-MR analysis as follows:
+MR analysis and plot Figure2-4 as follows:
 
 ```r
-Rscript 2_MR_analysis.R
+Rscript analysis_workflow.R
 ```
 
-## Step 3: Figure2 plot
-
-MR analysis as follows:
-
-```r
-Rscript 3_volcano_plot.R
-```
-
-## Step 4: Figure3 plot
-
-Figure3 forest plot as follows:
-
-```r
-Rscript 4_Forest_plot.R
-```
-
-## Step 5: Figure4 plot
-
-SERPINA1 and NCAN plasma proteins data link:
-
-[Pietzner.a1_Antitrypsin_3580_25.txt.gz](https://download.decode.is/form/folder/proteomics)
-
-[Ferkingstad.15573_110_NCAN_CSPG3.txt](https://www.synapse.org/Synapse:syn51824537)
-
-Figure4 colocalization plot as follows:
-
-```r
-Rscript 5_colocalization_analysis.R
-```
-
-## Step 6: Figure5 plot
+## Step 2: Figure5 plot
 
 Figure 5 is derived from the online analysis results of STRING, and the website address is as follows: 
 
@@ -137,18 +99,12 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 
 <img width="1026" height="727" alt="image" src="https://github.com/user-attachments/assets/94b4dbdc-ccdb-45db-8cbf-fda88974be59" />
 
-## Step 7: SMR and HEIDI tests
-
-prepare SMR analysis input files:
-
-```r
-Rscript 6_SMR_analysis.R
-```
+## Step 3: SMR and HEIDI tests
 
 eQTLGen consortium analysis:
 
 ```r
-SMR_analysis/smr-1.3.1-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out ./final results/FinngenR12.cis.eQTL
+SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out ./final results/FinngenR12.cis.eQTL
 ```
 
 eQTL.GTEX.v8 analysis:

@@ -79,7 +79,6 @@ export(mydata.ieu4915,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein
 g3859 <-fread('Raw_input_data/GCST90043859_buildGRCh37.tsv',header = T,sep='\t')
 g3859 <-as.data.frame(g3859)
 g3859$phenotype <- "BileDuct.cancer"
-#g3859$samplesize <- as.numeric(456285)
 g3859MR <- format_data(g3859,type = "outcome",
                        header = TRUE,
                        phenotype_col = "phenotype",
@@ -131,34 +130,34 @@ mr_steiger_direction.g3859 <-directionality_test(mydata.g3859)
 export(mr_steiger_direction.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls",format = "\t")
 
 ################################################################################################ Figure2 plot
+###mr.or <-fread('final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls',header = T)
 
-mr.or <-fread('final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls',header = T)
-mr.or <- mr.or[mr.or$method!="Weighted median",]
-mr.or <- mr.or[mr.or$method!="MR Egger",]
+mr.or.finn <- MR.OR.finn[MR.OR.finn$method!="Weighted median",]
+mr.or.finn <- mr.or.finn[mr.or.finn$method!="MR Egger",]
 
-res <- mr.or %>% filter(!is.na(pval)) %>% 
+res.finn <- mr.or.finn %>% filter(!is.na(pval)) %>% 
   mutate( logP = -log10(pval) ) %>%
   mutate( OR = or ) %>%
   mutate( tag = "Validation Bile Duct Cancer")%>%
   mutate( Gene = rownames(id.exposure))
 
-sig.res <- res %>% mutate(group=case_when(
+sig.res.finn <- res.finn %>% mutate(group=case_when(
   (pval < 0.05/1193 & or > 1) ~ "Positively associated",
   (pval < 0.05/1193 & or < 1) ~ "Negatively associated",
   .default = "Not significant"))
 
 
-sig.res <- sig.res %>% mutate(group=factor(group,levels = c("Positively associated","Negatively associated","Not significant")))
+sig.res.finn <- sig.res.finn %>% mutate(group=factor(group,levels = c("Positively associated","Negatively associated","Not significant")))
 
-label <-subset(sig.res$id.exposure,sig.res$pval < (0.05/1193))
-label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("NCAN"))
-label <-subset(sig.res$id.exposure,sig.res$id.exposure %in% c("SERPINA1"))
+label <-subset(sig.res.finn$id.exposure,sig.res.finn$pval < (0.05/1193))
+label <-subset(sig.res.finn$id.exposure,sig.res.finn$id.exposure %in% c("NCAN"))
+label <-subset(sig.res.finn$id.exposure,sig.res.finn$id.exposure %in% c("SERPINA1"))
 label <-c("NCAN","SERPINA1")
 
 my_label <- paste0( "P<4.19 x 10-5 ; ",
                     "Positively associated:",table(sig.res$group)[1]," ; ",
                     "Negatively associated:",table(sig.res$group)[2])
-p <- ggscatter(sig.res,
+p <- ggscatter(sig.res.finn,
                x = "OR", y = "logP",
                label = "id.exposure",
                label.select = label,
@@ -174,7 +173,7 @@ p <- ggscatter(sig.res,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 p
-ggsave("final results/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
+ggsave("Final_results/Figures/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
 ##########################################################################
 mr.or <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
 mr.or <- mr.or[mr.or$method!="Weighted median",]

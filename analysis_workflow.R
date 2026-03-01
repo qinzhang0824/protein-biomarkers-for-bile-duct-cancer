@@ -227,10 +227,12 @@ sig.res.g3859 <- res.g3859 %>% mutate(group=case_when(
   (pval < 0.05 & or < 1) ~ "Negatively associated",
   .default = "Not significant"))
 
+sig.res.g3859 <- sig.res.g3859 %>% mutate(group=factor(group,levels = c("Positively associated","Negatively associated","Not significant")))
+
 label <-c("SERPINA1")
 my_label <- paste0( "P<0.05 ; ",
-                    "Positively associated:",table(sig.res$group)[1]," ; ",
-                    "Negatively associated:",table(sig.res$group)[2])
+                    "Positively associated:",table(sig.res.g3859$group)[1]," ; ",
+                    "Negatively associated:",table(sig.res.g3859$group)[2])
 p <- ggscatter(sig.res.g3859,
                x = "OR", y = "logP",
                label = "id.exposure",
@@ -241,14 +243,14 @@ p <- ggscatter(sig.res.g3859,
                palette = c("#D01910","#00599F","#CCCCCC"),
                ylim = c(-0.1,5),xlim=c(0,3.0))+
   theme_base()+
-  geom_hline(yintercept = -log10(0.05/1193), linetype="dashed", color = "#222222") +
+  geom_hline(yintercept = -log10(0.05), linetype="dashed", color = "#222222") +
   geom_vline(xintercept = 1 , linetype="dashed", color = "#222222") +
   #geom_vline(xintercept = -1, linetype="dashed", color = "#222222") +
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 p
 
-ggsave("Final_results/Figures/Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
+ggsave("Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
 
 ####################################################################################################### Figure3 plot
 ##mr.or <-fread("Final_results/Discovery_cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)

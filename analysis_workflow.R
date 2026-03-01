@@ -137,7 +137,7 @@ mr.or.finn <- mr.or.finn[mr.or.finn$method!="MR Egger",]
 res.finn <- mr.or.finn %>% filter(!is.na(pval)) %>% 
   mutate( logP = -log10(pval) ) %>%
   mutate( OR = or ) %>%
-  mutate( tag = "Validation Bile Duct Cancer")%>%
+  mutate( tag = "Discovery Bile Duct Cancer")%>%
   mutate( Gene = rownames(id.exposure))
 
 sig.res.finn <- res.finn %>% mutate(group=case_when(
@@ -156,15 +156,16 @@ label <-c("NCAN","SERPINA1")
 my_label <- paste0( "P<4.19 x 10-5 ; ",
                     "Positively associated:",table(sig.res$group)[1]," ; ",
                     "Negatively associated:",table(sig.res$group)[2])
+
 p <- ggscatter(sig.res.finn,
                x = "OR", y = "logP",
                label = "id.exposure",
                label.select = label,
                color = "group", size = 2,
-               main = paste0("Discovery cohort(FinngenR12)"), # ***
+               main = paste0("Discovery Bile Duct Cancer"), # ***
                xlab = "OR", ylab = "-log10(P.Value)",
-               palette = c("#D01910","#00599F","#CCCCCC"),
-               ylim = c(-0.1,5),xlim=c(0,3.0))+
+               palette = c("#00599F","#CCCCCC"),
+               ylim = c(-0.1,15),xlim=c(0,3.0))+
   theme_base()+
   geom_hline(yintercept = -log10(0.05/1193), linetype="dashed", color = "#222222") +
   geom_vline(xintercept = 1 , linetype="dashed", color = "#222222") +
@@ -172,7 +173,7 @@ p <- ggscatter(sig.res.finn,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 p
-ggsave("Final_results/Figures/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
+ggsave("Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
 ##########################################################################
 
 mr.or.ieu4915 <- MR.OR.ieu4915[MR.OR.ieu4915$method!="Weighted median",]

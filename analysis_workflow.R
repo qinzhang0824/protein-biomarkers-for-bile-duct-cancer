@@ -353,14 +353,13 @@ locuscompare(in_fn1 =pQTL_fn.NCAN , in_fn2 = gwas_fn.NCAN, title1 = 'pQTL',title
 ggsave('/Final_results/Figures/Figure4_NCAN_finngen_Coloc.png',width=9,height = 4.5)
 
 ####################################################################### SERPINA1
-
 t.chr <-'14' ###finngen protein
 t.pos <-94844947
 
 gwas.SERPINA1 <- bile.finn[bile.finn$chr.outcome=="14",]
 gwas.SERPINA1 <- gwas.SERPINA1[gwas.SERPINA1$pos.outcome >t.pos-1000000 & gwas.SERPINA1$pos.outcome < t.pos+1000000,]
 
-protein.SERPINA1 <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
+protein.SERPINA1 <- fread("Pietzner.a1_Antitrypsin_3580_25.txt.gz",sep='\t')
 protein.SERPINA1$phenotype <- "Proteins"
 protein.SERPINA1 <- as.data.frame(protein.SERPINA1)
 data.SERPINA1 <- format_data(protein.SERPINA1,type = "exposure",
@@ -377,7 +376,7 @@ data.SERPINA1 <- format_data(protein.SERPINA1,type = "exposure",
                     samplesize_col = "TotalSampleSize",
                     id_col = "Proteins",
                     pos_col = "pos")
-pQTL.SERPINA1 <-data.SERPINA1[data.SERPINA1$chr.exposure=="chr14",]
+pQTL.SERPINA1 <-data.SERPINA1[data.SERPINA1$chr.exposure=="14",]
 pQTL.SERPINA1 <- pQTL.SERPINA1[pQTL.SERPINA1$pos.exposure >t.pos-1000000 & pQTL.SERPINA1$pos.exposure < t.pos+1000000,]
 
 gwas.SERPINA1$MAF <- ifelse(gwas.SERPINA1$eaf.outcome<0.5,gwas.SERPINA1$eaf.outcome,1-gwas.SERPINA1$eaf.outcome)
@@ -401,7 +400,8 @@ pQTL_fn.SERPINA1 <- pQTL.SERPINA1[,c('SNP','pval.exposure')] %>% dplyr::rename(r
 
 locuscompare(in_fn1 =pQTL_fn.SERPINA1 , in_fn2 = gwas_fn.SERPINA1, title1 = 'pQTL',title2 = 'GWAS',snp="rs28929474")
 
-ggsave('/Final_results/Figures/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
+ggsave('Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
+
 ###############################################################################################################################  SMR input
 
 f<-select(bile.finn,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)

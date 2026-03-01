@@ -352,14 +352,13 @@ ggsave('/Final_results/Figures/Figure4_NCAN_finngen_Coloc.png',width=9,height = 
 t.chr <-'14' ###finngen protein
 t.pos <-94844947
 
-out <- fread ("/intermediate_files/finngen_R12_C3_Bile_outcome.MR.format_SERPINA1.xls",sep='\t',header = T)
-gwas <- out[out$chr.outcome=="14",]
-gwas <- gwas[gwas$pos.outcome >t.pos-1000000 & gwas$pos.outcome < t.pos+1000000,]
+gwas.SERPINA1 <- bile.finn[bile.finn$chr.outcome=="14",]
+gwas.SERPINA1 <- gwas.SERPINA1[gwas.SERPINA1$pos.outcome >t.pos-1000000 & gwas.SERPINA1$pos.outcome < t.pos+1000000,]
 
-protein <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
-protein$phenotype <- "Proteins"
-protein <- as.data.frame(protein)
-data <- format_data(protein,type = "exposure",
+protein.SERPINA1 <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
+protein.SERPINA1$phenotype <- "Proteins"
+protein.SERPINA1 <- as.data.frame(protein.SERPINA1)
+data.SERPINA1 <- format_data(protein.SERPINA1,type = "exposure",
                     header = TRUE,
                     phenotype_col = "phenotype",
                     snp_col = "rsid",
@@ -373,31 +372,31 @@ data <- format_data(protein,type = "exposure",
                     samplesize_col = "TotalSampleSize",
                     id_col = "Proteins",
                     pos_col = "pos")
-pQTL <-data[data$chr.exposure=="chr14",]
-pQTL <- pQTL[pQTL$pos.exposure >t.pos-1000000 & pQTL$pos.exposure < t.pos+1000000,]
+pQTL.SERPINA1 <-data.SERPINA1[data.SERPINA1$chr.exposure=="chr14",]
+pQTL.SERPINA1 <- pQTL.SERPINA1[pQTL.SERPINA1$pos.exposure >t.pos-1000000 & pQTL.SERPINA1$pos.exposure < t.pos+1000000,]
 
-gwas$MAF <- ifelse(gwas$eaf.outcome<0.5,gwas$eaf.outcome,1-gwas$eaf.outcome)
-pQTL$MAF <- ifelse(pQTL$eaf.exposure<0.5,pQTL$eaf.exposure,1-pQTL$eaf.exposure)
+gwas.SERPINA1$MAF <- ifelse(gwas.SERPINA1$eaf.outcome<0.5,gwas.SERPINA1$eaf.outcome,1-gwas.SERPINA1$eaf.outcome)
+pQTL.SERPINA1$MAF <- ifelse(pQTL.SERPINA1$eaf.exposure<0.5,pQTL.SERPINA1$eaf.exposure,1-pQTL.SERPINA1$eaf.exposure)
 
-gwas <- gwas[gwas$MAF != 'NA',]
-pQTL <- pQTL[pQTL$MAF !='NA',]
+gwas.SERPINA1 <- gwas.SERPINA1[gwas.SERPINA1$MAF != 'NA',]
+pQTL.SERPINA1 <- pQTL.SERPINA1[pQTL.SERPINA1$MAF !='NA',]
 
-sameSNP <- intersect(pQTL$SNP,gwas$SNP)
+sameSNP.SERPINA1 <- intersect(pQTL.SERPINA1$SNP,gwas.SERPINA1$SNP)
 
-pQTL <- pQTL[pQTL$SNP %in% sameSNP,]
-gwas <- gwas[gwas$SNP %in% sameSNP,]
+pQTL.SERPINA1 <- pQTL.SERPINA1[pQTL.SERPINA1$SNP %in% sameSNP.SERPINA1,]
+gwas.SERPINA1 <- gwas.SERPINA1[gwas.SERPINA1$SNP %in% sameSNP.SERPINA1,]
 
 ##### finngen
-gwas$s <-as.numeric(2298/gwas$samplesize.outcome)
+gwas.SERPINA1$s <-as.numeric(2298/gwas.SERPINA1$samplesize.outcome)
 
-result <- coloc.abf(dataset1=list(pvalues=gwas$pval.outcome, snp=gwas$SNP,MAF=gwas$MAF,beta=gwas$beta.outcome, varbeta=gwas$se.outcome^2,type="cc", s=gwas$s[1], N=gwas$samplesize.outcome),dataset2=list(pvalues=pQTL$pval.exposure, snp=pQTL$SNP,MAF=pQTL$MAF,beta=pQTL$beta.exposure, varbeta=pQTL$se.exposure^2, type="quant", N=pQTL$samplesize.exposure), MAF=pQTL$MAF)
+result.SERPINA1 <- coloc.abf(dataset1=list(pvalues=gwas.SERPINA1$pval.outcome, snp=gwas.SERPINA1$SNP,MAF=gwas.SERPINA1$MAF,beta=gwas.SERPINA1$beta.outcome, varbeta=gwas.SERPINA1$se.outcome^2,type="cc", s=gwas.SERPINA1$s[1], N=gwas.SERPINA1$samplesize.outcome),dataset2=list(pvalues=pQTL.SERPINA1$pval.exposure, snp=pQTL.SERPINA1$SNP,MAF=pQTL.SERPINA1$MAF,beta=pQTL.SERPINA1$beta.exposure, varbeta=pQTL.SERPINA1$se.exposure^2, type="quant", N=pQTL.SERPINA1$samplesize.exposure), MAF=pQTL.SERPINA1$MAF)
 
-gwas_fn <- gwas[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
-pQTL_fn <- pQTL[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
+gwas_fn.SERPINA1 <- gwas.SERPINA1[,c('SNP','pval.outcome')] %>% dplyr::rename(rsid = SNP, pval = pval.outcome)
+pQTL_fn.SERPINA1 <- pQTL.SERPINA1[,c('SNP','pval.exposure')] %>% dplyr::rename(rsid = SNP, pval = pval.exposure)
 
-locuscompare(in_fn1 =pQTL_fn , in_fn2 = gwas_fn, title1 = 'pQTL',title2 = 'GWAS',snp="rs28929474")
+locuscompare(in_fn1 =pQTL_fn.SERPINA1 , in_fn2 = gwas_fn.SERPINA1, title1 = 'pQTL',title2 = 'GWAS',snp="rs28929474")
 
-ggsave('/final_results/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
+ggsave('/Final_results/Figures/Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
 ###############################################################################################################################  SMR input
 
 g <- fread ("intermediate_files/finngen_R12_C3_Bile_outcome.MR.format.xls",sep='\t',header = T)

@@ -7,7 +7,7 @@ library(ggthemes)
 library(TwoSampleMR)
 library(data.table)
 
-mr.or <-fread('final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls',header = T)
+mr.or <-fread('Final_results/Discovery_cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls',header = T)
 mr.or <- mr.or[mr.or$method!="Weighted median",]
 mr.or <- mr.or[mr.or$method!="MR Egger",]
 
@@ -38,7 +38,7 @@ p <- ggscatter(sig.res,
                label = "id.exposure",
                label.select = label,
                color = "group", size = 2,
-               main = paste0("Discovery cohort(FinngenR12)"), # ***
+               main = paste0("Discovery_cohort(FinngenR12)"), # ***
                xlab = "OR", ylab = "-log10(P.Value)",
                palette = c("#D01910","#00599F","#CCCCCC"),
                ylim = c(-0.1,5),xlim=c(0,3.0))+
@@ -49,9 +49,9 @@ p <- ggscatter(sig.res,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 p
-ggsave("final results/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
+ggsave("Final_results/Figures/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
 ######################################################################################################
-mr.or <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
+mr.or <-fread('Final_results/Validation_cohort _1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
 mr.or <- mr.or[mr.or$method!="Weighted median",]
 mr.or <- mr.or[mr.or$method!="MR Egger",]
 
@@ -85,9 +85,9 @@ p <- ggscatter(sig.res,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 
-ggsave("final results/Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
+ggsave("Final_results/Figures/Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
 ##############################################################################################################
-mr.or <-fread('final results/Validation cohort 2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
+mr.or <-fread('Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
 
 mr.or <- mr.or[mr.or$method!="Weighted median",]
 mr.or <- mr.or[mr.or$method!="MR Egger",]
@@ -123,7 +123,7 @@ p <- ggscatter(sig.res,
   theme(plot.background = element_blank())
 p
 
-ggsave("final results/Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
+ggsave("Final_results/Figures/Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
 
 
 

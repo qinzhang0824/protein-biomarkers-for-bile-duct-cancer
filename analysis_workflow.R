@@ -98,7 +98,7 @@ mydata.g3859 <- harmonise_data(exposure_dat=protein.mr,outcome_dat=g3859MR,actio
 export(mydata.g3859,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls",format = "\t")
 
 ########################################################################################### MR analysis finngen.R12
-#mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.txt',header = T)
+#### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.txt',header = T)
 
 result.finn <- mr(mydata.finn, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
 MR.OR.finn<-generate_odds_ratios(result.finn)
@@ -109,26 +109,26 @@ mr_steiger_direction.finn <-directionality_test(mydata.finn)
 export(mr_steiger_direction.finn,"Final_results/Discovery_cohort/mr_result_exposure.cis-PlasmaProtein_outcome.finn12_steiger_direction.txt",format = "\t")
 
 ###########################################################################################  IEU-b-4915
-mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls',header = T)
+#### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls',header = T)
 
-result <- mr(mydata, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
-MR.OR<-generate_odds_ratios(result)
+result.ieu4915 <- mr(mydata.ieu4915, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
+MR.OR.ieu4915<-generate_odds_ratios(result.ieu4915)
 
-export(MR.OR,"Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls",format = "\t") 
+export(MR.OR.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls",format = "\t") 
 
-mr_steiger_direction <-directionality_test(mydata)
-export(mr_steiger_direction,"Final_results/Validation_cohort_1/mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls",format = "\t")
+mr_steiger_direction.ieu4915 <-directionality_test(mydata.ieu4915)
+export(mr_steiger_direction.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls",format = "\t")
 
 ############################################################################################## GCST90043859
-mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls',header = T)
+### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls',header = T)
 
-result <- mr(mydata, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
-MR.OR<-generate_odds_ratios(result)
+result.g3859 <- mr(mydata.g3859, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
+MR.OR.g3859<-generate_odds_ratios(result.g3859)
 
-export(MR.OR,"Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls",format = "\t") 
+export(MR.OR.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls",format = "\t") 
 
-mr_steiger_direction <-directionality_test(mydata)
-export(mr_steiger_direction,"Final_results/Validation_cohort_2/mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls",format = "\t")
+mr_steiger_direction.g3859 <-directionality_test(mydata.g3859)
+export(mr_steiger_direction.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls",format = "\t")
 
 ################################################################################################ Figure2 plot
 

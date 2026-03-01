@@ -175,16 +175,16 @@ p <- ggscatter(sig.res.finn,
 p
 ggsave("Final_results/Figures/Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
 ##########################################################################
-mr.or <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
-mr.or <- mr.or[mr.or$method!="Weighted median",]
-mr.or <- mr.or[mr.or$method!="MR Egger",]
+###mr.or <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
+mr.or.ieu4915 <- MR.OR.ieu4915[MR.OR.ieu4915$method!="Weighted median",]
+mr.or.ieu4915 <- mr.or.ieu4915[mr.or.ieu4915$method!="MR Egger",]
 
-res <- mr.or %>% filter(!is.na(pval)) %>% 
+res.ieu4915 <- mr.or.ieu4915 %>% filter(!is.na(pval)) %>% 
   mutate( logP = -log10(pval) ) %>%
   mutate( OR = or ) %>%
   mutate( tag = "Discovery Bile Duct Cancer")%>%
   mutate( Gene = rownames(id.exposure))
-sig.res <- res %>% mutate(group=case_when(
+sig.res.ieu4915 <- res.ieu4915 %>% mutate(group=case_when(
   (pval < 0.05 & or > 1) ~ "Positively associated",
   (pval < 0.05 & or < 1) ~ "Negatively associated",
   .default = "Not significant"))
@@ -193,7 +193,7 @@ label <-c("NCAN")
 my_label <- paste0( "P<0.05 ; ",
                     "Positively associated:",table(sig.res$group)[1]," ; ",
                     "Negatively associated:",table(sig.res$group)[2])
-p <- ggscatter(sig.res,
+p <- ggscatter(sig.res.ieu4915,
                x = "OR", y = "logP",
                label = "id.exposure",
                label.select = label,
@@ -209,7 +209,7 @@ p <- ggscatter(sig.res,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 
-ggsave("final results/Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
+ggsave("Final_results/Figures/Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
 ###########################################################
 mr.or <-fread('final results/Validation cohort 2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
 

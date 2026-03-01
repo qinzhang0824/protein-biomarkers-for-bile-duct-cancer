@@ -403,14 +403,12 @@ locuscompare(in_fn1 =pQTL_fn.SERPINA1 , in_fn2 = gwas_fn.SERPINA1, title1 = 'pQT
 ggsave('Figure4_SERPINA1_finngen_Coloc.png',width=9,height = 4.5)
 
 ###############################################################################################################################  SMR input
-
-f<-select(bile.finn,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)
+f<-dplyr::select(bile.finn,SNP,effect_allele.outcome,other_allele.outcome,eaf.outcome,beta.outcome,se.outcome,pval.outcome,samplesize.outcome)
 colnames(f)<-c("SNP","A1","A2","freq","b","se","p","n")
 
 f_clean <- f[!apply(f, 1, function(row) {any(is.na(row) | row == "")}), , drop = FALSE]
 
-f_clean[, "SNP"] <- sub(",.*", "", f[, "SNP"])
-
+f_clean[, "SNP"] <- sub(",.*", "", f_clean[, "SNP"])
 export(f_clean,"SMR_analysis/SMR_GWAS_FinngenR12_input.txt",format = "\t")
 
 

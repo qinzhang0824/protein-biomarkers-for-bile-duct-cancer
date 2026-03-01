@@ -175,24 +175,25 @@ p <- ggscatter(sig.res.finn,
 p
 ggsave("Figure2A_MR_Protein_vs_FinngenR12_volcano.pdf", p, width = 12, height = 10)
 ##########################################################################
-
 mr.or.ieu4915 <- MR.OR.ieu4915[MR.OR.ieu4915$method!="Weighted median",]
 mr.or.ieu4915 <- mr.or.ieu4915[mr.or.ieu4915$method!="MR Egger",]
 
 res.ieu4915 <- mr.or.ieu4915 %>% filter(!is.na(pval)) %>% 
   mutate( logP = -log10(pval) ) %>%
   mutate( OR = or ) %>%
-  mutate( tag = "Discovery Bile Duct Cancer")%>%
+  mutate( tag = "Replication cohort 1(IEU-b-4915)")%>%
   mutate( Gene = rownames(id.exposure))
 sig.res.ieu4915 <- res.ieu4915 %>% mutate(group=case_when(
   (pval < 0.05 & or > 1) ~ "Positively associated",
   (pval < 0.05 & or < 1) ~ "Negatively associated",
   .default = "Not significant"))
 
+sig.res.ieu4915 <- sig.res.ieu4915 %>% mutate(group=factor(group,levels = c("Positively associated","Negatively associated","Not significant")))
+
 label <-c("NCAN")
 my_label <- paste0( "P<0.05 ; ",
-                    "Positively associated:",table(sig.res$group)[1]," ; ",
-                    "Negatively associated:",table(sig.res$group)[2])
+                    "Positively associated:",table(sig.res.ieu4915$group)[1]," ; ",
+                    "Negatively associated:",table(sig.res.ieu4915$group)[2])
 p <- ggscatter(sig.res.ieu4915,
                x = "OR", y = "logP",
                label = "id.exposure",
@@ -209,7 +210,8 @@ p <- ggscatter(sig.res.ieu4915,
   labs(subtitle = my_label)+
   theme(plot.background = element_blank())
 
-ggsave("Final_results/Figures/Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
+ggsave("Figure2B_MR_Protein_vs_IEU-b-4915_volcano.pdf", p, width = 12, height = 10)
+
 ###########################################################
 
 mr.or.g3859 <- MR.OR.g3859[MR.OR.g3859$method!="Weighted median",]

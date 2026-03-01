@@ -248,13 +248,13 @@ p
 ggsave("Final_results/Figures/Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
 
 ####################################################################################################### Figure3 plot
-mr.or <-fread("final results/Discovery cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
-mr.or1 <-fread('final results/Validation cohort 1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
-mr.or2 <-fread('final results/Validation cohort 2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
+##mr.or <-fread("Final_results/Discovery_cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
+##mr.or1 <-fread('Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
+##mr.or2 <-fread('Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
 
-out_multi.finn <-mr.or[mr.or$pval<(0.05/1193),]
-out_multi.4915 <-mr.or1[mr.or1$id.exposure %in% c("NCAN","SERPINA1"),]
-out_multi.g3859 <-mr.or2[mr.or2$id.exposure %in% c("NCAN","SERPINA1"),]
+out_multi.finn <-MR.OR.finn[MR.OR.finn$pval<(0.05/1193),]
+out_multi.4915 <-MR.OR.ieu4915[MR.OR.ieu4915$id.exposure %in% c("NCAN","SERPINA1"),]
+out_multi.g3859 <-MR.OR.g3859[MR.OR.g3859$id.exposure %in% c("NCAN","SERPINA1"),]
 
 out_multi <-rbind(out_multi.finn,out_multi.4915,out_multi.g3859)
 

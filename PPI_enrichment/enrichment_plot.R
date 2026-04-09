@@ -2,7 +2,9 @@ library(ggplot2)
 library(dplyr)
 library(data.table)
 
-kegg.res <- fread("PPI_enrichment/NCAN_enrichment_GO.tsv",sep='\t',header=T)
+setwd('./protein-biomarkers-for-bile-duct-cancer')
+
+kegg.res <- fread("./PPI_enrichment/NCAN_enrichment_GO.tsv",sep='\t',header=T)
 dotplot <- ggplot(kegg.res, aes(
   x = strength,
   y = reorder(category, strength),
@@ -25,9 +27,9 @@ dotplot <- ggplot(kegg.res, aes(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
     legend.position = "right"
   )
-ggsave("NCAN_enrichment_GO_dotplot.pdf", width = 10, height = 6)
+ggsave("./Final_results/figure5A_NCAN_enrichment_GO_dotplot.pdf", width = 10, height = 6)
 ###############################################################################################
-kegg.res <- fread("PPI_enrichment/SERPINA1_enrichment_GO.tsv",sep='\t',header=T)
+kegg.res <- fread("./PPI_enrichment/SERPINA1_enrichment_GO.tsv",sep='\t',header=T)
 dotplot <- ggplot(kegg.res, aes(
   x = strength,
   y = reorder(category, strength),
@@ -50,4 +52,4 @@ dotplot <- ggplot(kegg.res, aes(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
     legend.position = "right"
   )
-ggsave("SERPINA1_enrichment_GO_dotplot.pdf", width = 10, height = 8)
+ggsave("./Final_results/figure5B_SERPINA1_enrichment_GO_dotplot.pdf", width = 10, height = 8)

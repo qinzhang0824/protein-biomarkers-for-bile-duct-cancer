@@ -7,7 +7,7 @@ The download/setup script (download_inputs.sh) that performs retrieval, decompre
 
 ```bash
 #!/bin/bash
-sh download_inputs.sh
+sh ./protein-biomarkers-for-bile-duct-cancer/download_inputs.sh
 ```
 
 ## 1.1 Instrumental variables of plasma proteins used in MR analysis
@@ -19,7 +19,7 @@ The cis-pQTLs were selected based on the following criteria:
 (c). subsequently, LD clumping was performed to identify independent protein quantitative trait loci (pQTLs) for each protein, ensuring that variants had an r² value less than 0.001;
 (d). F-statistics genetic instruments were higher than 10
 
-Ultimately, the instrumental variables file used for analysis is "/Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt"
+Ultimately, the instrumental variables file used for analysis is "./protein-biomarkers-for-bile-duct-cancer/Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt"
 
 ## 1.2 Three GWAS summary data of Bile tract cancer (BTC) patients
 
@@ -43,9 +43,9 @@ Notes:
 **Download the above three files to the "Raw_input_data" folder to prepare for the subsequent analysis.**
 
 ## 1.3 Two target proteins GWAS data path
-NCAN path: "/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
+NCAN path: "./protein-biomarkers-for-bile-duct-cancer/Raw_input_data/Ferkingstad.15573_110_NCAN_CSPG3.txt"
 
-SERPINA1 path: "/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
+SERPINA1 path: "./protein-biomarkers-for-bile-duct-cancer/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt"
 
 
 # 2.Prerequisites
@@ -68,7 +68,7 @@ BiocManager::install("VariantAnnotation")
 
 **sessionInfo() output and R environment definition file path:**
 
-protein-biomarkers-for-bile-duct-cancer/R_env 
+./protein-biomarkers-for-bile-duct-cancer/R_env 
 
 
 # 3. Analysis workflow
@@ -78,7 +78,7 @@ protein-biomarkers-for-bile-duct-cancer/R_env
 MR analysis and plot Figure2-4 as follows:
 
 ```r
-Rscript analysis_workflow.R
+Rscript ./protein-biomarkers-for-bile-duct-cancer/analysis_workflow.R
 ```
 
 ## Step 2: Figure5 plot
@@ -104,13 +104,13 @@ Figure 5D SERPINA1 enrichment analysis related parameters:
 eQTLGen consortium analysis:
 
 ```r
-SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out /SMR_analysis/FinngenR12.cis.eQTL
+./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/1000G_EUR --gwas-summary ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/cis-eQTLs-full_eQTLGen_AF_incl_nr_formatted_20191212.new.txt_besd-dense --out ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/FinngenR12.cis.eQTL
 ```
 
 eQTL.GTEX.v8 analysis:
 
 ```r
-SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile SMR_analysis/1000G_EUR --gwas-summary SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary SMR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out /SMR_analysis/FinngenR12.cis.eQTL.GTEX.v8
+./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/smr-1.4.0-linux-x86_64/smr --bfile ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/1000G_EUR --gwas-summary ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/SMR_GWAS_FinngenR12_input.txt --beqtl-summary ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/GTEx_V8_cis_eqtl_summary_lite/eQTL_besd_lite/Whole_Blood.lite --out ./protein-biomarkers-for-bile-duct-cancer/SMR_analysis/FinngenR12.cis.eQTL.GTEX.v8
 ```
 
 

@@ -7,7 +7,7 @@ The download/setup script (download_inputs.sh) that performs retrieval, decompre
 
 ```bash
 #!/bin/bash
-sh download_input.sh
+sh download_inputs.sh
 ```
 
 ## 1.1 Instrumental variables of plasma proteins used in MR analysis

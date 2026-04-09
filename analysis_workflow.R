@@ -27,6 +27,7 @@ library(ggpubr)
 library(ggthemes)
 library(grid)
 
+setwd('./protein-biomarkers-for-bile-duct-cancer')
 ############################################################################################################ read Instruments variables of plasma proteins
 protein <- fread("Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt",sep='\t')
 protein$phenotype <- "Proteins"
@@ -65,16 +66,16 @@ bile.finn <- format_data(finngen,type = "outcome",
                          samplesize_col = "samplesize",
                          id_col = "phenotype",
                          pos_col = "pos")
-export(bile.finn,"intermediate_files/finngen_R12_C3_Bile_outcome.MR.format.xls",format = "\t")
+export(bile.finn,"intermediate_files/finngen_R12_C3_Bile_outcome.MR.format.txt",format = "\t")
 mydata.finn <- harmonise_data(exposure_dat=protein.mr,outcome_dat=bile.finn,action= 2)
-export(mydata.finn,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.xls",format = "\t")
+export(mydata.finn,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.txt",format = "\t")
 
 ###################################################################### Read IEU-b-4915 download data (vcf) and harmonise with Instruments variables of plasma proteins
 vcf <- VariantAnnotation::readVcf("Raw_input_data/ieu-b-4915.vcf", "hg19")
 ieu4915 <- gwasvcf_to_TwoSampleMR(vcf,type = "outcome")
 mydata.ieu4915 <- harmonise_data(exposure_dat=protein.mr,outcome_dat=ieu4915,action= 2)
 
-export(mydata.ieu4915,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls",format = "\t")
+export(mydata.ieu4915,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.txt",format = "\t")
 ########################################################################################### Read GCST90043859 download data and harmonise with Instruments variables of plasma proteins
 g3859 <-fread('Raw_input_data/GCST90043859_buildGRCh37.tsv',header = T,sep='\t')
 g3859 <-as.data.frame(g3859)
@@ -94,10 +95,9 @@ g3859MR <- format_data(g3859,type = "outcome",
                        pos_col = "base_pair_location")
 
 mydata.g3859 <- harmonise_data(exposure_dat=protein.mr,outcome_dat=g3859MR,action= 2)
-export(mydata.g3859,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls",format = "\t")
+export(mydata.g3859,"intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.txt",format = "\t")
 
 ########################################################################################### MR analysis finngen.R12
-#### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer.txt',header = T)
 
 result.finn <- mr(mydata.finn, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
 MR.OR.finn<-generate_odds_ratios(result.finn)
@@ -108,26 +108,22 @@ mr_steiger_direction.finn <-directionality_test(mydata.finn)
 export(mr_steiger_direction.finn,"Final_results/Discovery_cohort/mr_result_exposure.cis-PlasmaProtein_outcome.finn12_steiger_direction.txt",format = "\t")
 
 ###########################################################################################  IEU-b-4915
-#### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer.xls',header = T)
-
 result.ieu4915 <- mr(mydata.ieu4915, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
 MR.OR.ieu4915<-generate_odds_ratios(result.ieu4915)
 
-export(MR.OR.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls",format = "\t") 
+export(MR.OR.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.txt",format = "\t") 
 
 mr_steiger_direction.ieu4915 <-directionality_test(mydata.ieu4915)
-export(mr_steiger_direction.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.xls",format = "\t")
+export(mr_steiger_direction.ieu4915,"Final_results/Validation_cohort_1/mr_result_exposure.cis-PlasmaProtein_ieu4915_steiger_direction.txt",format = "\t")
 
 ############################################################################################## GCST90043859
-### mydata <- fread('intermediate_files/Harmonising_exposure.cis-pQTLs_protein_outcome.GCST90043859.bile.duct.cancer.xls',header = T)
-
 result.g3859 <- mr(mydata.g3859, method_list=c("mr_egger_regression", "mr_ivw","mr_weighted_median","mr_wald_ratio"))
 MR.OR.g3859<-generate_odds_ratios(result.g3859)
 
-export(MR.OR.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls",format = "\t") 
+export(MR.OR.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.txt",format = "\t") 
 
 mr_steiger_direction.g3859 <-directionality_test(mydata.g3859)
-export(mr_steiger_direction.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.xls",format = "\t")
+export(mr_steiger_direction.g3859,"Final_results/Validation_cohort_2/mr_result_exposure.cis-PlasmaProtein_g3859_steiger_direction.txt",format = "\t")
 
 ################################################################################################ Figure2 plot
 
@@ -253,10 +249,6 @@ p
 ggsave("Figure2C_MR_Protein_vs_GCST90043859_volcano.pdf", p, width = 12, height = 10)
 
 ####################################################################################################### Figure3 plot
-##mr.or <-fread("Final_results/Discovery_cohort/mr_result_exposure.cis-pQTLs_protein_outcome.finngen.R12.bile.duct.cancer_addOR.xls",sep='\t',header=T)
-##mr.or1 <-fread('Final_results/Validation_cohort_1/mr_result_exposure.cis-pQTLs_protein_outcome.ieu4915.bile.duct.cancer_addOR.xls',header = T)
-##mr.or2 <-fread('Final_results/Validation_cohort_2/mr_result_exposure.cis-pQTLs_protein_outcome.g3859.bile.duct.cancer_addOR.xls',header = T)
-
 out_multi.finn <-MR.OR.finn[MR.OR.finn$pval<(0.05/1193),]
 out_multi.4915 <-MR.OR.ieu4915[MR.OR.ieu4915$id.exposure %in% c("NCAN","SERPINA1"),]
 out_multi.g3859 <-MR.OR.g3859[MR.OR.g3859$id.exposure %in% c("NCAN","SERPINA1"),]
@@ -359,7 +351,7 @@ t.pos <-94844947
 gwas.SERPINA1 <- bile.finn[bile.finn$chr.outcome=="14",]
 gwas.SERPINA1 <- gwas.SERPINA1[gwas.SERPINA1$pos.outcome >t.pos-1000000 & gwas.SERPINA1$pos.outcome < t.pos+1000000,]
 
-protein.SERPINA1 <- fread("Pietzner.a1_Antitrypsin_3580_25.txt.gz",sep='\t')
+protein.SERPINA1 <- fread("/Raw_input_data/Pietzner.a1_Antitrypsin_3580_25.txt",sep='\t')
 protein.SERPINA1$phenotype <- "Proteins"
 protein.SERPINA1 <- as.data.frame(protein.SERPINA1)
 data.SERPINA1 <- format_data(protein.SERPINA1,type = "exposure",

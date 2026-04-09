@@ -29,7 +29,7 @@ library(grid)
 
 setwd('./protein-biomarkers-for-bile-duct-cancer')
 ############################################################################################################ read Instruments variables of plasma proteins
-protein <- fread("Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt",sep='\t')
+protein <- fread("/Raw_input_data/Instrumental_variables_of_plasma_proteins_used_in_MR_analysis.txt",sep='\t')
 protein$phenotype <- "Proteins"
 protein <- as.data.frame(protein)
 protein.mr <- format_data(protein,type = "exposure",
@@ -48,7 +48,7 @@ protein.mr <- format_data(protein,type = "exposure",
                           pos_col = "Pos")
 
 ##########################################################################Read FinnGen R12 download data and harmonise with Instruments variables of plasma proteins
-finngen <-fread('Raw_input_data/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC',header = T,sep='\t')
+finngen <-fread('/Raw_input_data/finngen_R12_C3_BILIARY_GALLBLADDER_EXALLC',header = T,sep='\t')
 finngen <-as.data.frame(finngen)
 finngen$phenotype <- "Bile.duct.cancer"
 finngen$samplesize <- as.numeric(381047)
